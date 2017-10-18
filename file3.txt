@@ -1,0 +1,9 @@
+Awesome!	Hall,		Longueuil
+Anna	Josh		Montreal
+Victor	Samuel		Blainville	
+Mike	Peter		NDG	
+Phill	Mateo		Anjou	
+Ted		Evan		Montreal
+Maya	Aaron		Brossard
+Lucy	Carson		Anjou.
+
