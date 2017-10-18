@@ -5,36 +5,21 @@
  *      Author: David
  */
 
-#include "tokenizer.h"
+#include "tokenizer.h";
 
-/*!
- *default constructor
- */
+
 tokenizer::tokenizer(){
 	fileName = "";
 }
-/*!
- *
- * @param fileName
- */
 tokenizer::tokenizer(string fileName){
 	this->fileName = fileName;
 }
-/*!
- *
- * @param word
- * @return
- */
 vector<string> tokenizer::stringTokenize(string word)
 {
 	//supposed to tokenize for ws
 	vector<string> words;
 	return words;
 }
-/*!
- *
- * @return
- */
 vector<string> tokenizer::tokentoDocument(){
 
 	ifstream ifs(fileName);
