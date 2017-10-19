@@ -30,7 +30,7 @@ private:
     vector<Document> indexe;
     // to make our 2d matrix of frequency from part 1
     vector<vector<double>> tf;
-    vector<double> documentFreq;
+    vector<double> df;
     vector<vector<double>> tf_idf_weights;
     vector<int> tfquery;
     vector<double> tfquery_idf_weight;

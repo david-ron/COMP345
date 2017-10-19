@@ -36,10 +36,6 @@ int main()
 	dictionary->toCreateDictionary(*doc);
 	i=3;
 	*doc = idx[i];
-	for(i=4;i<12;++i){
-	idx>>*doc2;
-		dictionary->toCreateDictionary(*doc);
-	}
 	dictionary->toCreateDictionary(*doc);
 	dictionary->sorting();
 	dictionary->duplicateRemove();

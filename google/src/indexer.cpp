@@ -29,27 +29,66 @@ int indexer::mySize()
  */
 void indexer::normalize()
 {
-	cout<<documentFreq.size()<< "  ";
-	cout<<tf.size();
+	cout<<df.size()<< "  ";
+	cout<<tf[0].size();
 	cout<<"\n \n \n";
-	double weight = 0.00;
+	double tempidf = 0;
+	double temptf = 0;
+	float weight = 0.00;
 	vector<double> d_weight;
+	vector<double> empty;
 	double doc = (double)(docCount);
 	vector<string> diction = dictionary.content();
-	for(unsigned int i=0; i<4;++i)
+	for(unsigned int i=0; i<tf[0].size();++i)
 	{
-		for(unsigned int j=0; j<tf.size();++j){
-	double ttf = (double)(tf[j][i]);
-	double tempidf = log(doc/documentFreq[i]);
-	cout<<tempidf;
-	double temptf = (1+log((double)tf[j][i]));
-	cout<<"  " <<temptf<< "   ";
-	cout<<temptf*tempidf<<endl;
-//	weight = double((1 + (double)log((double)ttf) * (double)log(doc/(double)df[i])));
-//	d_weight.push_back(weight);
+		for(unsigned int j=0; j<tf.size();++j)
+		{
+			double ttf = (double)(tf[j][i]);
+			if(ttf != 0)
+			{
+				tempidf = log(doc/df[i]);
+				temptf = (1+log((double)tf[j][i]));
+				cout<<temptf*tempidf<<" tf is  "<<tf[j][i]<<endl;
+				weight = tempidf*temptf;
+				if(weight<=0.01||weight>5)
+				{
+					d_weight.push_back(0);
+				}
+				else
+				{
+					d_weight.push_back( floorf(weight * 100) / 100);
+				}
+
+			}
+			else
+			{
+				cout<<0<<" tf is  "<<tf[j][i]<<endl;
+				d_weight.push_back(0);
+			}
 		}
-//		tf_idf_weights.push_back(d_weight);
+		tf_idf_weights.push_back(d_weight);
+		d_weight = empty;
 	}
+//	for(unsigned int i=0; i<tf.size();++i)
+//	{
+//		for(unsigned int j=0; j<tf[0].size();++j)
+//		{
+//			if(tf_idf_weights[j][i]<0.001||tf_idf_weights[j][i]>5){
+//			tf_idf_weights[j][i]=0;}
+//			else{
+//
+//			}
+//		}
+//		}
+	for(unsigned int i=0; i<tf.size();++i)
+		{
+			for(unsigned int j=0; j<tf[0].size();++j)
+			{
+
+				cout<<tf_idf_weights[i][j]<< "  ";
+			}	cout<<endl;
+			}
+
 }
 
 /*!
@@ -136,10 +175,9 @@ void indexer::dftfFinder(Document & dictionary)
 				count++;
 			}
 		}
-		documentFreq.push_back(count);
+		df.push_back(count);
 		 count = 0;
 	}
-	cout<<documentFreq.size()<< "  "<<endl;
 }
 
 
@@ -170,10 +208,11 @@ void indexer::normalize(vector<string> words)
 
 	for(unsigned int i=0; i<tf.size();++i)
 	{
-	weight = (1 + log(tfquery[i]) * log(docCount/documentFreq[i]));
+	weight = (1 + log(tfquery[i]) * log(docCount/df[i]));
 	tfquery_idf_weight.push_back(weight);
 	}
 }
+
 void indexer::querytfFinder(vector<string> str)
 {
 	float count=0;

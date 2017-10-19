@@ -21,7 +21,7 @@
  */
 	Document::Document(string fileName){
 		this->fileName = fileName;
-		tokenizer *t = new tokenizer(fileName);
+		Tokenizer *t = new Tokenizer(fileName);
 
 		fileTokens = t->tokentoDocument();
 		sort(fileTokens.begin(), fileTokens.end());
@@ -113,7 +113,7 @@
 void Document::compare(Document & dict){
 
     vector<string> olddict = dict.content();
-
+    vector<string> newdict;
     bool duplicated = false;
     for (unsigned int i = 0; i < olddict.size(); ++i) {
         for (unsigned int j = 0; j < fileTokens.size(); ++j) {
@@ -122,12 +122,12 @@ void Document::compare(Document & dict){
             }
         }
         if (duplicated==false)
-            fileTokens.push_back(olddict[i]);
+            newdict.push_back(olddict[i]);
 
         //Resest
         duplicated = false;
 }
-
+    fileTokens = newdict;
 }
 
 /*!
