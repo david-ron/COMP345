@@ -46,11 +46,11 @@ public:
     // not sure where to place this
     void dictionaryCreation();
     vector<query_result> & query(string str, int mode = 10);
-    void print(Document & dictionary);
     vector<int> getdf();
     void normalize(vector<string> words);
     void querytfFinder(vector<string> str);
     void indexDictionary(Document & diction);
+    void print(Document & dictionary);
 };
 
 #endif /* INDEXER_H_ */

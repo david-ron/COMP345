@@ -37,27 +37,21 @@ void indexer::normalize()
 	float weight = 0.00;
 	vector<double> d_weight;
 	vector<double> empty;
-	double doc = (double)(docCount);
+	double doc = docCount;
 	vector<string> diction = dictionary.content();
 	for(unsigned int i=0; i<tf[0].size();++i)
 	{
 		for(unsigned int j=0; j<tf.size();++j)
 		{
 			double ttf = (double)(tf[j][i]);
-			if(ttf != 0)
+			if(ttf != 0&&df[i]!=doc)
 			{
 				tempidf = log(doc/df[i]);
-				temptf = (1+log((double)tf[j][i]));
-				cout<<temptf*tempidf<<" tf is  "<<tf[j][i]<<endl;
+				temptf = (1+log(tf[j][i]));
+				cout<<temptf<<" tf is  "<<tf[j][i]<<" and idf is"<<tempidf<<endl;
 				weight = tempidf*temptf;
-				if(weight<=0.01||weight>5)
-				{
-					d_weight.push_back(0);
-				}
-				else
-				{
-					d_weight.push_back( floorf(weight * 100) / 100);
-				}
+
+					d_weight.push_back( floorf(weight * 1000) / 1000);
 
 			}
 			else
@@ -80,14 +74,14 @@ void indexer::normalize()
 //			}
 //		}
 //		}
-	for(unsigned int i=0; i<tf.size();++i)
-		{
-			for(unsigned int j=0; j<tf[0].size();++j)
-			{
-
-				cout<<tf_idf_weights[i][j]<< "  ";
-			}	cout<<endl;
-			}
+//	for(unsigned int i=0; i<tf[0].size();++i)
+//		{
+//			for(unsigned int j=0; j<tf.size();++j)
+//			{
+//
+//				cout<<tf_idf_weights[j][i]<< "  ";
+//			}	cout<<endl;
+//			}
 
 }
 
@@ -187,16 +181,16 @@ void indexer::dftfFinder(Document & dictionary)
  * @param mode
  * @return
  */
-vector<query_result> & indexer::query(string str, int x) {
-	vector<string> words;
-	words.push_back(str);
-	querytfFinder(words);
-	normalize(words);
-	vector<query_result> qrs;
-	query_result qr = query_result();
-	qrs.push_back(qr);
-	return qrs;
-}
+//vector<query_result> & indexer::query(string str, int x) {
+//	vector<string> words;
+//	words.push_back(str);
+//	querytfFinder(words);
+//	normalize(words);
+//	vector<query_result> qrs;
+//	query_result qr = query_result();
+//	qrs.push_back(qr);
+//	return qrs;
+//}
 void indexer::indexDictionary(Document & diction)
 {
 	dictionary = diction;
@@ -232,4 +226,65 @@ void indexer::querytfFinder(vector<string> str)
 			tfquery.push_back(count);
 				count = 0;
 		}
+}
+void indexer::print(Document & dictionary) {
+
+	string longWord;
+	int longWordNum;
+
+	string tempLong="";
+	for (unsigned int i = 0; i < dictionary.content().size(); ++i) {
+		if( dictionary.size() > tempLong.size())
+		{
+			tempLong = dictionary.content()[i];
+		}
+
+		longWord = tempLong;
+		longWordNum = longWord.size();
+	}
+
+
+	string tmd ="DOC";
+	string temps="";
+	cout<<setw(longWordNum + 20) << "" <<" ";
+	for (unsigned int a =0; a <tf.size(); ++a){
+		temps= to_string(a);
+		tmd = tmd + temps;
+		cout << left << setw(longWordNum + 20) << tmd;
+		tmd="DOC";
+	}
+
+	cout<<endl;
+
+	cout<< "Dictionary";
+
+	for (unsigned int k = 0; k < tf.size(); ++k) {
+
+		if (k == 0) {
+			cout << left << setw(longWordNum + 10) << "" << "TF";
+			cout << left << setw(3) << "" << "DF";
+		} else {
+			cout << left << setw(19) << "" << "TF";
+			cout << left << setw(3) << "" << "DF";
+		}
+	}
+
+
+	cout<<endl;
+
+	for (unsigned int i = 0; i < dictionary.content().size(); ++i) {
+
+		for (unsigned int j = 0; j < tf.size(); ++j) {
+
+			if(j==0)
+				cout << left << setw(longWordNum + 20) << dictionary.content()[i] <<  "" << tf[j][i] << "    " <<  df[i] << setw(20) <<  "" << "";
+			else{
+				cout << "" << tf[j][i] << "    " << df[i] << setw(20) <<  "" <<  "";
+			}
+
+
+		}
+		cout<<endl;
+
+	}
 }
