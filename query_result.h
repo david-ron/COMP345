@@ -18,7 +18,7 @@ public:
 	query_result();
 	query_result(document & docc,int scoree);
 	void info();
-
+ //<< cout<<qr
 
 };
 

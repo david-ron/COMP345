@@ -18,7 +18,7 @@
 
 #include "document.h"
 #include "query_result.h"
-#include "query_result.h"
+
 class indexer{
     friend std::ostream & operator<<(std::ostream & os,
                                      indexer & idx);
@@ -43,11 +43,9 @@ public:
     void dftfFinder(document & dictionary);
     // not sure where to place this
     void dictionaryCreation();
-
-    query_result & query(string str, int mode = 10);
-    void indexer::dftfFinder(vector<string> str);
-
-    void print(document & dictionary) ;
+    vector<query_result> & query(string str, int mode = 10);
+    void dftfFinder(vector<string> str);
+    void print(document & dictionary);
 
 
 };

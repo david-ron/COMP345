@@ -44,8 +44,7 @@ public:
 
 	void changeContent(vector<string> words);
 
-	vector<string> compare(document *dict, vector<string> swords);
-
+	vector<string> compare(document &dict);
 
 };
 #endif /* DOCUMENT_H_ */

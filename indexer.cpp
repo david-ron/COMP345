@@ -181,11 +181,12 @@ void indexer::dftfFinder(vector<string> str)
  * @return
  */
 
-query_result & indexer::query(string str, int mode = 10) {
+vector<query_result> & indexer::query(string str, int x) {
 	vector<string> words;
+	vector<query_result> qrs;
 	query_result qr = query_result();
 
-	return query_result;
+	return qrs;
 }
 
 /*!
@@ -230,7 +231,7 @@ int main() {
 	idx.normalize();
 	idx.query("josh");
 
-	idx.print((*dictionary));
+	idx.print(*dictionary);
 
 	cout<<"stopwords printing"<<endl;
 	document *docStop = new document ("stop.txt");
@@ -239,7 +240,7 @@ int main() {
 	int j = 1;
 	document *stopDict = new document ();
 
-	stopDict->compare(dictionary,docStop->content() );
+	stopDict->compare(*dictionary);
 	stopDict->sorting();
 	stopDict->duplicateRemove();
 

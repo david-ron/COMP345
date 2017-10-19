@@ -103,32 +103,21 @@
  *
  * @param words
  */
-	void document::changeContent(vector<string> words){
+	void document::changeContent(vector<string> words)
+	{
 		fileTokens = words;
 	}
-/*!
- *
- * @param os
- * @param d
- * @return
- */
-	ostream & operator << (ostream & os, document & d)
 
-/*!
- *
- * @param dict
- * @param swords
- * @return
- */
-vector<string> document::compare(document *dict, vector<string> swords){
 
-vector<string> tmp = dict->content();
+vector<string> document::compare(document & dict){
+
+vector<string> tmp = dict.content();
 bool duplicated = false;
 
-for (unsigned int i =0; i<dict->size(); ++i) {
-    for (unsigned int j = 0; j < swords.size(); ++j) {
+for (unsigned int i =0; i<dict.size(); ++i) {
+    for (unsigned int j = 0; j < fileTokens.size(); ++j) {
 
-        if (tmp[i] == swords[j]) {
+        if (tmp[i] == fileTokens[j]) {
             duplicated = true;
         }
     }
