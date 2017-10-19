@@ -21,9 +21,9 @@ using namespace std;
 
 
 
-class document {
+class Document {
 friend std::ostream & operator<<(std::ostream & os,
-		document & d);
+		Document & d);
 private:
 	vector<string> fileTokens;
 	long fileSize;
@@ -32,19 +32,19 @@ private:
 	vector<string> filtedTokens;
 public:
 
-	document();
-	document(string fileName);
+	Document();
+	Document(string fileName);
 	string name();
 	int size();
 	vector<string> content();
 	//will return output stream saying if null or not
-	void toCreateDictionary(document & doc);
+	void toCreateDictionary(Document & doc);
 	void sorting();
 	void duplicateRemove();
 
 	void changeContent(vector<string> words);
 
-	vector<string> compare(document &dict);
+	void compare(Document &dict);
 
 };
 #endif /* DOCUMENT_H_ */
