@@ -34,7 +34,7 @@ void indexer::normalize()
 	cout<<"\n \n \n";
 	double tempidf = 0;
 	double temptf = 0;
-	float weight = 0.00;
+	double weight = 0.00;
 	vector<double> d_weight;
 	vector<double> empty;
 	double doc = docCount;
@@ -48,7 +48,7 @@ void indexer::normalize()
 			{
 				tempidf = log(doc/df[i]);
 				temptf = (1+log(tf[j][i]));
-				cout<<temptf<<" tf is  "<<tf[j][i]<<" and idf is"<<tempidf<<endl;
+//				cout<<temptf<<" tf is  "<<tf[j][i]<<" and idf is"<<tempidf<<endl;
 				weight = tempidf*temptf;
 
 					d_weight.push_back( floorf(weight * 1000) / 1000);
@@ -56,32 +56,24 @@ void indexer::normalize()
 			}
 			else
 			{
-				cout<<0<<" tf is  "<<tf[j][i]<<endl;
+//				cout<<temptf<<" tf is  "<<tf[j][i]<<" and idf is"<<tempidf<<endl;
 				d_weight.push_back(0);
 			}
 		}
 		tf_idf_weights.push_back(d_weight);
 		d_weight = empty;
+
+
 	}
-//	for(unsigned int i=0; i<tf.size();++i)
-//	{
-//		for(unsigned int j=0; j<tf[0].size();++j)
-//		{
-//			if(tf_idf_weights[j][i]<0.001||tf_idf_weights[j][i]>5){
-//			tf_idf_weights[j][i]=0;}
-//			else{
-//
-//			}
-//		}
-//		}
-//	for(unsigned int i=0; i<tf[0].size();++i)
-//		{
-//			for(unsigned int j=0; j<tf.size();++j)
-//			{
-//
-//				cout<<tf_idf_weights[j][i]<< "  ";
-//			}	cout<<endl;
-//			}
+
+	for(unsigned int i=0; i<tf[0].size();++i)
+		{
+			for(unsigned int j=0; j<tf.size();++j)
+			{
+
+				cout<<tf_idf_weights[i][j]<< "  ";
+			}	cout<<endl;
+			}
 
 }
 
@@ -209,7 +201,7 @@ void indexer::normalize(vector<string> words)
 
 void indexer::querytfFinder(vector<string> str)
 {
-	float count=0;
+	double count=0;
 	vector<double> empty;
 	vector<string> diction = dictionary.content();
 	vector<string> temp;
