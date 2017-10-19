@@ -15,6 +15,7 @@
 #include <vector>
 #include <iomanip>
 
+
 #include "tokenizer.h"
 using namespace std;
 
@@ -28,6 +29,7 @@ private:
 	long fileSize;
 	string fileName;
 	long findSize();
+	vector<string> filtedTokens;
 public:
 
 	document();
@@ -39,6 +41,10 @@ public:
 	void toCreateDictionary(document & doc);
 	void sorting();
 	void duplicateRemove();
+
 	void changeContent(vector<string> words);
+
+	vector<string> compare(document &dict);
+
 };
 #endif /* DOCUMENT_H_ */

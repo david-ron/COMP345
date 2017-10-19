@@ -20,9 +20,9 @@
 #include "query_result.h"
 
 class indexer{
-	friend std::ostream & operator<<(std::ostream & os,
-			indexer & idx);
-	friend indexer & operator>>(indexer & left, document & right);
+    friend std::ostream & operator<<(std::ostream & os,
+                                     indexer & idx);
+    friend indexer & operator>>(indexer & left, document & right);
 
 private:
     int docCount; //Document Count
@@ -43,8 +43,10 @@ public:
     void dftfFinder(document & dictionary);
     // not sure where to place this
     void dictionaryCreation();
-    query_result & query(string str, int mode = 10);
-    void indexer::dftfFinder(vector<string> str);
+    vector<query_result> & query(string str, int mode = 10);
+    void dftfFinder(vector<string> str);
+    void print(document & dictionary);
+
 
 };
 

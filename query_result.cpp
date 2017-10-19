@@ -6,14 +6,24 @@
  */
 #include "query_result.h"
 
+/*!
+ *
+ */
 void query_result::info()
 {
 	cout<<score<<" "<< doc.name();
 }
+/*!
+ *default constructor
+ */
 query_result::query_result(){
 	score = 0;
 }
-
+/*!
+ *
+ * @param docc
+ * @param scoree
+ */
 query_result::query_result(document & docc,int scoree){
 	score = scoree;
 	doc = docc;
