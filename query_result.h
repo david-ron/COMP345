@@ -12,14 +12,14 @@
 
 class query_result{
 private:
-	document doc;
-	int score;
+	Document doc;
+	double score;
+
 public:
 	query_result();
-	query_result(document & docc,int scoree);
+	query_result(Document & docc,double scoree);
 	void info();
- //<< cout<<qr
-
+	void uwtfFinder(vector<string> str, Document & dictionary);
 };
 
 #endif /* QUERY_RESULT_H_ */

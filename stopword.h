@@ -35,7 +35,7 @@ public:
     stopword(string fileName);
     const bool operator()(string word);
     void display();
-    vector<string> compare (document dict, vector<string> swords);
+    vector<string> compare (Document dict, vector<string> swords);
 
 
 

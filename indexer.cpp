@@ -29,7 +29,6 @@ int indexer::mySize()
  */
 void indexer::normalize()
 {
-	int i=0,j=0;
 	double weight;
 	vector<double> d_weight;
 	for(unsigned int i=0; i<tf[0].size();++i)
@@ -50,7 +49,7 @@ void indexer::normalize()
  * @param right
  * @return
  */
-indexer & operator >> (indexer & left,document & right)
+indexer & operator >> (indexer & left,Document & right)
 {
 	left.indexe.push_back(right);
 	left.docCount++;
@@ -88,7 +87,7 @@ ostream & operator << (ostream & os, indexer & idx)
  * @param i
  * @return
  */
-const document & indexer::operator[](const int i)
+const Document & indexer::operator[](const int i)
 {
 	return indexe[i];
 }
@@ -97,7 +96,7 @@ const document & indexer::operator[](const int i)
  *
  * @param dictionary
  */
-void indexer::dftfFinder(document & dictionary)
+void indexer::dftfFinder(Document & dictionary)
 {
 	int count=0;
 	vector<int> counter;
@@ -120,6 +119,13 @@ void indexer::dftfFinder(document & dictionary)
 		tf.push_back(counter);
 		counter = empty;
 	}
+	for(unsigned int i=0; i<tf[0].size();++i)
+		{
+			for(unsigned int j=0; j<tf.size();++j){
+				cout<<tf[j][i];
+			}
+			cout<<"\n";
+		}
 
 	for(unsigned int i=0; i<tf[0].size();++i)
 	{
@@ -137,115 +143,51 @@ void indexer::dftfFinder(document & dictionary)
 /*!
  *
  * @param str
+ * @param mode
+ * @return
  */
-void indexer::dftfFinder(vector<string> str)
+vector<query_result> & indexer::query(string str, int x) {
+	vector<string> words;
+	words.push_back(str);
+	querytfFinder(words);
+	normalize(words);
+	vector<query_result> qrs;
+	query_result qr = query_result();
+	qrs.push_back(qr);
+	return qrs;
+}
+void indexer::indexDictionary(Document & diction)
+{
+	dictionary = diction;
+}
+void indexer::normalize(vector<string> words)
+{
+	double weight;
+	vector<double> d_weight;
+
+	for(unsigned int i=0; i<tf.size();++i)
+	{
+	weight = (1 + log(tfquery[i]) * log(docCount/df[i]));
+	tfquery_idf_weight.push_back(weight);
+	}
+}
+void indexer::querytfFinder(vector<string> str)
 {
 	int count=0;
-	vector<int> counter;
 	vector<int> empty;
-	vector<string> diction = str;
+	vector<string> diction = dictionary.content();
 	vector<string> temp;
-	for(unsigned int n0=0; n0 < indexe.size(); ++n0) {
-		for (unsigned int n1 = 0; n1 < diction.size(); ++n1) {
-			temp = indexe[n0].content();
-			for (unsigned int n2 = 0; n2 < temp.size(); ++n2) {
+	for(unsigned int j = 0; j<str.size();++j)
+	{
+			for (unsigned int i = 0; i < diction.size(); ++i) {
 
-				if (diction[n1] == temp[n2])
+				if (str[j] == diction[i])
 				{
 					++count;
 				}
 			}
-			counter.push_back(count);
-			count = 0;
+
+			tfquery.push_back(count);
+				count = 0;
 		}
-		tf.push_back(counter);
-		counter = empty;
-	}
-
-	for(unsigned int i=0; i<tf[0].size();++i)
-	{
-		for(unsigned int j=0; j<tf.size();++j){
-			if(tf[j][i] > 0)
-			{
-				count++;
-			}
-		}
-		df.push_back(count);
-		count = 0;
-	}
-}
-/*!
- *
- * @param str
- * @param mode
- * @return
- */
-
-vector<query_result> & indexer::query(string str, int x) {
-	vector<string> words;
-	vector<query_result> qrs;
-	query_result qr = query_result();
-
-	return qrs;
-}
-
-/*!
- *
- * @param dictionary
- */
-void indexer::print(document & dictionary) {
-	int x=0;
-	for (unsigned int i = 0; i < dictionary.content().size(); ++i) {
-		for (unsigned int j = 0; j < dictionary.content().size()-1; ++j) {
-
-			cout << left << setw(10) << dictionary.content()[j+i] << tf[i+1][j];
-			cout << left  << setw(10) << tf[i][j];
-			cout<<endl;
-		}
-	}
-
-}
-
-int main() {
-	document *doc1 = new document("file1.txt");
-	vector<string> dummy;
-	dummy = doc1->content();
-	document *doc0 = new document("file2.txt");
-	indexer idx2 = indexer();
-	indexer idx = indexer();
-	idx>>*doc0;
-	idx>>*doc1;
-	int i = 1;
-	document *dictionary = new document();
-	document *doc = new document();
-	*doc = idx[i];
-	dictionary->toCreateDictionary(*doc);
-	i = 0;
-	*doc = idx[i];
-	dictionary->toCreateDictionary(*doc);
-	dictionary->sorting();
-	dictionary->duplicateRemove();
-
-	idx.dftfFinder(*dictionary);
-
-	idx.normalize();
-	idx.query("josh");
-
-	idx.print(*dictionary);
-
-	cout<<"stopwords printing"<<endl;
-	document *docStop = new document ("stop.txt");
-	indexer idxStop = indexer();
-	idxStop >> *docStop;
-	int j = 1;
-	document *stopDict = new document ();
-
-	stopDict->compare(*dictionary);
-	stopDict->sorting();
-	stopDict->duplicateRemove();
-
-	idx.dftfFinder(*stopDict);
-	idx.print(*stopDict);
-
-	return 0;
 }
