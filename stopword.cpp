@@ -23,7 +23,7 @@ stopword::stopword() {
 stopword::stopword(string fileName)
 {
     name = fileName;
-    tokenizer *t = new tokenizer(fileName);
+    Tokenizer *t = new Tokenizer(fileName);
     sWord = t->tokentoDocument();
 }
 /*!

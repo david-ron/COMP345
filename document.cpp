@@ -10,7 +10,7 @@
 /*!
  *default constructor
  */
-	document::document(){
+	Document::Document(){
 		fileName = "";
 		fileSize = -1;
 	}
@@ -19,9 +19,9 @@
  * @param fileName
  * constructor that takes a string as parameter and returns a document
  */
-	document::document(string fileName){
+	Document::Document(string fileName){
 		this->fileName = fileName;
-		tokenizer *t = new tokenizer(fileName);
+		Tokenizer *t = new Tokenizer(fileName);
 
 		fileTokens = t->tokentoDocument();
 		sort(fileTokens.begin(), fileTokens.end());
@@ -32,14 +32,15 @@
  * @return
  * returning files name
  */
-	string document::name(){
+	string Document::name()
+	{
 		return fileName;
 	}
 /*!
  *
  * @return
  */
-	long document::findSize()
+	long Document::findSize()
 	{
 	    long count=0;
 	    for (unsigned int i = 0; i < fileTokens.size(); ++i) {
@@ -54,20 +55,20 @@
  *
  * @return
  */
-	vector<string> document::content(){
+	vector<string> Document::content(){
 		return fileTokens;
 	}
 /*!
  *
  */
-	void document::sorting()
+	void Document::sorting()
 	{
 		sort(fileTokens.begin(), fileTokens.end());
 	}
 /*!
  *
  */
-	void document::duplicateRemove()
+	void Document::duplicateRemove()
 	{
 		 vector <string> fixedDictionary;
 		    for (unsigned int i = 0; i < fileTokens.size()-1; ++i) {
@@ -83,7 +84,7 @@
  *
  * @param doc
  */
-	void document::toCreateDictionary(document & doc)
+	void Document::toCreateDictionary(Document & doc)
 	{
 		vector<string> words = doc.fileTokens;
 		for (unsigned int i = 0; i < words.size(); ++i)
@@ -95,7 +96,7 @@
  *
  * @return
  */
-	int document::size()
+	int Document::size()
 	{
 		return fileSize;
 	}
@@ -103,31 +104,30 @@
  *
  * @param words
  */
-	void document::changeContent(vector<string> words)
+	void Document::changeContent(vector<string> words)
 	{
 		fileTokens = words;
 	}
 
 
-vector<string> document::compare(document & dict){
+void Document::compare(Document & dict){
 
-vector<string> tmp = dict.content();
-bool duplicated = false;
-
-for (unsigned int i =0; i<dict.size(); ++i) {
-    for (unsigned int j = 0; j < fileTokens.size(); ++j) {
-
-        if (tmp[i] == fileTokens[j]) {
-            duplicated = true;
+    vector<string> olddict = dict.content();
+    vector<string> newdict;
+    bool duplicated = false;
+    for (unsigned int i = 0; i < olddict.size(); ++i) {
+        for (unsigned int j = 0; j < fileTokens.size(); ++j) {
+            if(olddict[i]==fileTokens[j]){
+                duplicated = true;
+            }
         }
-    }
-    if (duplicated == false)
-    {
-        filtedTokens.push_back(tmp[i]);
-    }
-    duplicated = false;
+        if (duplicated==false)
+            newdict.push_back(olddict[i]);
+
+        //Resest
+        duplicated = false;
 }
-return filtedTokens;
+    fileTokens = newdict;
 }
 
 /*!
@@ -136,7 +136,7 @@ return filtedTokens;
  * @param d
  * @return
  */
-ostream & operator << (ostream & os, document & d)
+ostream & operator << (ostream & os, Document & d)
 
 {
 if(d.fileSize==-1)

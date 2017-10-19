@@ -24,9 +24,12 @@ query_result::query_result(){
  * @param docc
  * @param scoree
  */
-query_result::query_result(document & docc,int scoree){
+query_result::query_result(Document & docc,double scoree)
+{
 	score = scoree;
 	doc = docc;
 }
+
+
 
 
