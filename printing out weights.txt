@@ -1,0 +1,8 @@
+	for(unsigned int i=0; i<tf[0].size();++i)
+		{
+			for(unsigned int j=0; j<tf.size();++j)
+			{
+
+				cout<<tf_idf_weights[i][j]<< "  ";
+			}	cout<<endl;
+			}
