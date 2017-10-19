@@ -9,59 +9,34 @@
 #include <iostream>
 using namespace std;
 #include "indexer.h"
-/*!
- *default constructor
- */
 indexer::indexer()
 {
 	docCount = 0;
 }
-/*!
- *
- * @return
- */
 int indexer::mySize()
 {
 	return docCount;
 }
-/*!
- *
- */
-void indexer::normalize()
-{
-	double weight;
-	vector<double> d_weight;
-	for(unsigned int i=0; i<tf[0].size();++i)
-	{
-		for(unsigned int j=0; j<tf.size();++j){
-	int ttf = tf[j][i];
-	int tdf = df[i];
-	weight = (1 + log(ttf) * log(docCount/tdf));
-	d_weight.push_back(weight);
-		}
-		tf_idf_weights.push_back(d_weight);
-	}
-}
+// needs logic df temporary equation to show how it may look like
+//void indexer::normalize()
+//{
+//	int i=0,j=0;
+//	double  tf_idf_weight;
+//	int tf1 = tf[i][j];
+//	int df1 = df[i];
+//	tf_idf_weight = (1 + log(tf1) * log(docCount/df1));
+//	tf_idf_weight = log(1);
+//}
 
-/*!
- *
- * @param left
- * @param right
- * @return
- */
-indexer & operator >> (indexer & left,Document & right)
+//Overload operator that pushes the documents into the index object
+indexer & operator >> (indexer & left,document & right)
 {
 	left.indexe.push_back(right);
 	left.docCount++;
 	return left;
 }
 
-/*!
- *
- * @param os
- * @param idx
- * @return
- */
+//Overload operator that checks if the size and name have been initialized once a document is created
 ostream & operator << (ostream & os, indexer & idx)
 {
 	if(idx.indexe[1].size()==-1)
@@ -82,21 +57,14 @@ ostream & operator << (ostream & os, indexer & idx)
 	return os;
 }
 
-/*!
- *
- * @param i
- * @return
- */
-const Document & indexer::operator[](const int i)
+//Overload operator allows access to a document of an index
+const document & indexer::operator[](const int i)
 {
 	return indexe[i];
 }
 
-/*!
- *
- * @param dictionary
- */
-void indexer::dftfFinder(Document & dictionary)
+//Calculates the termFrequency and documentFrequency
+void indexer::dftfFinder(document & dictionary)
 {
 	int count=0;
 	vector<int> counter;
@@ -119,15 +87,18 @@ void indexer::dftfFinder(Document & dictionary)
 		tf.push_back(counter);
 		counter = empty;
 	}
-	for(unsigned int i=0; i<tf[0].size();++i)
+	int x = 0;
+	for(unsigned int j=0; j<tf.size()-1;++j)
+	{
+		if(tf[j][0]==tf[j+1][1])
 		{
-			for(unsigned int j=0; j<tf.size();++j){
-				cout<<tf[j][i];
-			}
-			cout<<"\n";
+			count++;
 		}
+		df.push_back(count);
+		count = 0;
+	}
 
-	for(unsigned int i=0; i<tf[0].size();++i)
+	for(unsigned int i=0; i<tf[x].size();++i)
 	{
 		for(unsigned int j=0; j<tf.size();++j){
 			if(tf[j][i] > 0)
@@ -136,58 +107,108 @@ void indexer::dftfFinder(Document & dictionary)
 			}
 		}
 		df.push_back(count);
-		 count = 0;
+		count = 0;
 	}
 }
 
-/*!
- *
- * @param str
- * @param mode
- * @return
- */
-vector<query_result> & indexer::query(string str, int x) {
-	vector<string> words;
-	words.push_back(str);
-	querytfFinder(words);
-	normalize(words);
-	vector<query_result> qrs;
-	query_result qr = query_result();
-	qrs.push_back(qr);
-	return qrs;
-}
-void indexer::indexDictionary(Document & diction)
-{
-	dictionary = diction;
-}
-void indexer::normalize(vector<string> words)
-{
-	double weight;
-	vector<double> d_weight;
+//Prints out the documents along with the their frequencies
+void indexer::print(document & dictionary) {
 
-	for(unsigned int i=0; i<tf.size();++i)
-	{
-	weight = (1 + log(tfquery[i]) * log(docCount/df[i]));
-	tfquery_idf_weight.push_back(weight);
+	string longWord;
+	int longWordNum;
+
+	string tempLong="";
+	for (unsigned int i = 0; i < dictionary.content().size(); ++i) {
+		if( dictionary.size() > tempLong.size())
+		{
+			tempLong = dictionary.content()[i];
+		}
+
+		longWord = tempLong;
+		longWordNum = longWord.size();
 	}
-}
-void indexer::querytfFinder(vector<string> str)
-{
-	int count=0;
-	vector<int> empty;
-	vector<string> diction = dictionary.content();
-	vector<string> temp;
-	for(unsigned int j = 0; j<str.size();++j)
-	{
-			for (unsigned int i = 0; i < diction.size(); ++i) {
 
-				if (str[j] == diction[i])
-				{
-					++count;
-				}
+
+	string tmd ="DOC";
+	string temps="";
+	cout<<setw(longWordNum + 20) << "" <<" ";
+	for (unsigned int a =0; a <tf.size(); ++a){
+		temps= to_string(a);
+		tmd = tmd + temps;
+		cout << left << setw(longWordNum + 20) << tmd;
+		tmd="DOC";
+	}
+
+	cout<<endl;
+
+	cout<< "Dictionary";
+
+	for (unsigned int k = 0; k < tf.size(); ++k) {
+
+		if (k == 0) {
+			cout << left << setw(longWordNum + 10) << "" << "TF";
+			cout << left << setw(3) << "" << "DF";
+		} else {
+			cout << left << setw(19) << "" << "TF";
+			cout << left << setw(3) << "" << "DF";
+		}
+	}
+
+
+	cout<<endl;
+
+	for (unsigned int i = 0; i < dictionary.content().size(); ++i) {
+
+		for (unsigned int j = 0; j < tf.size(); ++j) {
+
+			if(j==0)
+				cout << left << setw(longWordNum + 20) << dictionary.content()[i] <<  "" << tf[j][i] << "    " <<  df[i] << setw(20) <<  "" << "";
+			else{
+				cout << "" << tf[j][i] << "    " << df[i] << setw(20) <<  "" <<  "";
 			}
 
-			tfquery.push_back(count);
-				count = 0;
+
 		}
+		cout<<endl;
+
+	}
+}
+
+
+int main() {
+	document *doc1 = new document("file1.txt");
+
+	document *doc0 = new document("file2.txt");
+	document *doc2 = new document("file3.txt");
+
+	indexer idx = indexer();
+	idx>>*doc1;
+	idx>>*doc0;
+	idx>>*doc2;
+
+	document *dictionary = new document();
+
+	document *doc = new document();
+
+	int i = 1;
+	*doc = idx[i];
+	dictionary->toCreateDictionary(*doc);
+
+	i = 0;
+	*doc = idx[i];
+	dictionary->toCreateDictionary(*doc);
+
+	i = 2;
+	*doc = idx[i];
+	dictionary->toCreateDictionary(*doc);
+
+	dictionary->sorting();
+	dictionary->duplicateRemove();
+
+	idx.dftfFinder(*dictionary);
+
+	idx.print(*dictionary);
+
+	//cout<<*dictionary;
+	return 0;
 }

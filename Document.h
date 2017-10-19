@@ -15,36 +15,30 @@
 #include <vector>
 #include <iomanip>
 
-
 #include "tokenizer.h"
 using namespace std;
 
 
 
-class Document {
+class document {
 friend std::ostream & operator<<(std::ostream & os,
-		Document & d);
+		document & d);
 private:
 	vector<string> fileTokens;
 	long fileSize;
 	string fileName;
 	long findSize();
-	vector<string> filtedTokens;
 public:
 
-	Document();
-	Document(string fileName);
+	document();
+	document(string fileName);
 	string name();
 	int size();
 	vector<string> content();
 	//will return output stream saying if null or not
-	void toCreateDictionary(Document & doc);
-	void sorting();
-	void duplicateRemove();
+	void toCreateDictionary(document & doc);
 
-	void changeContent(vector<string> words);
-
-	void compare(Document &dict);
-
+    void duplicateRemove();
+    void sorting();
 };
 #endif /* DOCUMENT_H_ */

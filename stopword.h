@@ -12,7 +12,6 @@
 #include <vector>
 #include <iomanip>
 #include <list>
-#include "document.h"
 
 
 using namespace std;
@@ -20,23 +19,23 @@ using namespace std;
 
 class stopword{
 
+    ///Overloading Operator()
 
+    friend bool & operator<<(std::ostream & os, stopword & sw);
 
 
 private:
 
     string name;
-    vector<string> sWord;
-
+    list<string> sWord;
 
 public:
 
     stopword();
     stopword(string fileName);
-    const bool operator()(string word);
-    void display();
-    vector<string> compare (Document dict, vector<string> swords);
 
+    bool isEmpty(string name);
+    void display();
 
 
 

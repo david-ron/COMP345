@@ -24,6 +24,5 @@ public:
 tokenizer();
 tokenizer(string fileName);
 vector<string> tokentoDocument();
-vector<string> stringTokenize(string word);
 };
 #endif /* TOKENIZER_H_ */
