@@ -1,3 +1,6 @@
+//
+// Created by Sai Shan on 2017-10-16.
+//
 
 #include "stopword.h"
 #include"tokenizer.h"
@@ -14,8 +17,8 @@ stopword::stopword() {
 }
 
 /*!
+ *
  * @param fileName
- * Parametrized constructor
  */
 stopword::stopword(string fileName)
 {
@@ -24,11 +27,9 @@ stopword::stopword(string fileName)
     sWord = t->tokentoDocument();
 }
 /*!
+ *
  * @param word
- * @return boolean
- * Overloading the operator () so that if it finds the given word within the vector <string>,
- * it returns true, else false.
- * To do so, it iterates through the vector.
+ * @return
  */
 const bool stopword:: operator()(string word)
 {
@@ -38,34 +39,5 @@ const bool stopword:: operator()(string word)
             return true;
     }
     return false;
-}
-/*!
- *
- * @param os
- * @param sw
- * @return os
- * taking in ostream and a stopword
- * Overload of the operator <<
- * Output and appropriate message if the given stopword is not initialized properly.
- * Else, it displays the content of the vector string.
- */
-
-ostream & operator << (ostream & os, stopword & sw){
-
-    if(sw.name=="")
-    {
-        os<<"Error, name seems to not be initialized.";
-    }
-    else if(sWord.empty()){
-        os<<"Error, the vector string seems to not be initialized.";
-    }
-    else {
-        os<<"Here is the content of the vector string:";
-        for (vector<string>::iterator it = sw.sWord.begin(); it != sw.sWord.end(); ++it) {
-
-            os << *it << "\n";
-        }
-    }
-    return os;
 }
 
