@@ -1,13 +1,8 @@
-/*
- * query_result.cpp
- *
- *  Created on: Oct 18, 2017
- *      Author: David
- */
+
 #include "query_result.h"
 
 /*!
- *
+ *Displaying the info
  */
 void query_result::info()
 {
@@ -20,9 +15,10 @@ query_result::query_result(){
 	score = 0;
 }
 /*!
- *
  * @param docc
  * @param scoree
+ * Parametrized constructor
+
  */
 query_result::query_result(Document & docc,double scoree)
 {

@@ -1,6 +1,3 @@
-//
-// Created by Sai Shan on 2017-10-16.
-//
 
 #include "stopword.h"
 #include"tokenizer.h"
@@ -17,8 +14,8 @@ stopword::stopword() {
 }
 
 /*!
- *
  * @param fileName
+ * Parametrized constructor
  */
 stopword::stopword(string fileName)
 {
@@ -27,9 +24,11 @@ stopword::stopword(string fileName)
     sWord = t->tokentoDocument();
 }
 /*!
- *
  * @param word
- * @return
+ * @return boolean
+ * Overloading the operator () so that if it finds the given word within the vector <string>,
+ * it returns true, else false.
+ * To do so, it iterates through the vector.
  */
 const bool stopword:: operator()(string word)
 {

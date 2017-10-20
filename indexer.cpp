@@ -17,8 +17,7 @@ indexer::indexer()
 	docCount = 0;
 }
 /*!
- *
- * @return
+ * @return int
  */
 int indexer::mySize()
 {
@@ -89,7 +88,10 @@ void indexer::normalize()
  *
  * @param left
  * @param right
- * @return
+ * @return indexer
+ * Overload the operator >>, takes in a document and indexer as a parameter.
+ * Takes the given document and insert it into the indexer.
+ * Returns the updated indexer at the end.
  */
 indexer & operator >> (indexer & left,Document & right)
 {
@@ -102,7 +104,11 @@ indexer & operator >> (indexer & left,Document & right)
  *
  * @param os
  * @param idx
- * @return
+ * @return ostream
+ * Overload of the operator <<
+ * Take in and ostream and indexer.
+ * Output and appropriate message if the given indexer is not initialized properly.
+ * Else, it displays the amount of charaters in the document and its content.
  */
 ostream & operator << (ostream & os, indexer & idx)
 {
@@ -127,7 +133,10 @@ ostream & operator << (ostream & os, indexer & idx)
 /*!
  *
  * @param i
- * @return
+ * @return document
+ * Overload of the operator []
+ * Takes in an integer.
+ * Return the document at a given i index from the indexer.
  */
 const Document & indexer::operator[](const int i)
 {
@@ -137,6 +146,8 @@ const Document & indexer::operator[](const int i)
 /*!
  *
  * @param dictionary
+ * Takes in a document.
+ * This method compute the document frequency and the term frequency within a given document.
  */
 void indexer::dftfFinder(Document & dictionary)
 {
@@ -191,10 +202,19 @@ void indexer::dftfFinder(Document & dictionary)
 //	qrs.push_back(qr);
 //	return qrs;
 //}
+
+/*!
+ * @param diction
+ */
 void indexer::indexDictionary(Document & diction)
 {
 	dictionary = diction;
 }
+
+/*!
+ *
+ * @param words
+ */
 void indexer::normalize(vector<string> words)
 {
 	double weight;
@@ -207,6 +227,10 @@ void indexer::normalize(vector<string> words)
 	}
 }
 
+/*!
+ *
+ * @param str
+ */
 void indexer::querytfFinder(vector<string> str)
 {
 	float count=0;
@@ -227,6 +251,11 @@ void indexer::querytfFinder(vector<string> str)
 				count = 0;
 		}
 }
+
+/*!
+ * @param dictionary
+ * Printing out the result in the good format
+ */
 void indexer::print(Document & dictionary) {
 
 	string longWord;
