@@ -51,5 +51,5 @@ int main()
 	idx2->dftfFinder(*stopDict);
 	idx2->normalize();
 	idx2->indexDictionary(*stopDict);
-//	idx.query("josh");
+	idx2->query("help you figure");
 }

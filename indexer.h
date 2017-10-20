@@ -15,6 +15,7 @@
 #include <vector>
 #include <iomanip>
 #include <math.h>
+#include <complex>
 
 #include "document.h"
 #include "query_result.h"
@@ -32,7 +33,7 @@ private:
     vector<vector<double>> tf;
     vector<double> df;
     vector<vector<double>> tf_idf_weights;
-    vector<int> tfquery;
+    vector<double> tfquery;
     vector<double> tfquery_idf_weight;
     Document dictionary;
 public:
@@ -47,10 +48,11 @@ public:
     void dictionaryCreation();
     vector<query_result> & query(string str, int mode = 10);
     vector<int> getdf();
-    void normalize(vector<string> words);
+    void normalizequery();
     void querytfFinder(vector<string> str);
     void indexDictionary(Document & diction);
     void print(Document & dictionary);
+    void score();
 };
 
 #endif /* INDEXER_H_ */

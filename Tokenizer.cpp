@@ -58,26 +58,26 @@ vector<string> Tokenizer::tokentoDocument(){
 
 	    return v2;
 }
-//vector<string> removeSpace (string  s) {
-//
-//vector<string> tokens;
-//int i = 0;
-//int j = 0;
-//
-//while (i != s.size() && j != s.size()) {
-//
-//    while (i != s.size() && isspace(s[i])){
-//        ++i;
-//        j = i;
-//    }
-//    while (j != s.size() && !isspace(s[j])) {
-//        j++;
-//    }
-//
-//    if (i != j) {
-//        tokens.push_back(s.substr(i, j - i));
-//        i = j;
-//    }
-//}
-//return tokens;
-//}
+vector<string> Tokenizer::removeSpace (string  s) {
+
+vector<string> tokens;
+int i = 0;
+int j = 0;
+
+while (i != s.size() && j != s.size()) {
+
+    while (i != s.size() && isspace(s[i])){
+        ++i;
+        j = i;
+    }
+    while (j != s.size() && !isspace(s[j])) {
+        j++;
+    }
+
+    if (i != j) {
+        tokens.push_back(s.substr(i, j - i));
+        i = j;
+    }
+}
+return tokens;
+}
