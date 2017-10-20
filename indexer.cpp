@@ -162,12 +162,13 @@ void indexer::dftfFinder(Document & dictionary)
  */
 vector<query_result> & indexer::query(string str, int x)
 {
+
 	vector<string> words;
 	Tokenizer t = Tokenizer();
 	words = t.removeSpace(str);
 	querytfFinder(words);
 	normalizequery();
-//		score();
+	score();
 	vector<query_result> qrs;
 	query_result qr = query_result();
 	qrs.push_back(qr);
@@ -175,20 +176,53 @@ vector<query_result> & indexer::query(string str, int x)
 }
 void indexer::score()
 {
-	complex<double> tmp;
-//	for(unsigned int i =0 ;i<tf_idf_weights.size();++i)
-//	{
-//
-//		tmp =tf_idf_weights[i];
-//	norm(tmp);
-//	}
+	double accum = 0., norm = 0.;
+	vector<double> norms;
+
+	for(unsigned int i =0 ;i<tf_idf_weights.size();++i)
+	{
+		for(unsigned int j =0 ;j<tf_idf_weights[0].size();++j){
+		accum = tf_idf_weights[i][j]*tf_idf_weights[i][j];
+		}
+		if(accum==0){
+			norms.push_back(0);}
+		else{
+		norms.push_back(sqrt(accum));}
+	}
+
 	for(unsigned int i =0 ;i<tf_idf_weights.size();++i)
 		{
-	    double accum = 0.;
-
 	        accum += tfquery_idf_weight[i] * tfquery_idf_weight[i];
 		}
-	sqrt(accum);
+	norm = sqrt(accum);
+	double topdot=0;
+	vector<double> total_top;
+	double tmp1 = 0., tmp2 = 0.;
+	for(unsigned int i =0 ;i<tf_idf_weights[0].size();++i)
+		{
+			for(unsigned int j =0 ;j<tf_idf_weights.size();++j)
+			{
+				tmp1 = tfquery_idf_weight[j];
+				tmp2 = tf_idf_weights[j][i];
+				topdot += tmp1*tmp2;
+			}
+			total_top.push_back(topdot);
+		}
+	double tmp3 = 0.;
+	vector<double> results;
+	for(unsigned int i =0 ;i<tf_idf_weights[0].size();++i)
+		{
+				tmp1 = norm;
+				tmp2 = norms[i];
+				tmp3 = total_top[i];
+				if(tmp1==0||tmp2==0||tmp3==0){
+					results.push_back(0);}
+				else{
+				results.push_back(tmp3/(tmp1*tmp2));}
+		}
+	for(unsigned int i =0 ;i<tf_idf_weights[0].size();++i)
+			{cout<<results[i]<< "  ";}
+
 }
 
 
@@ -202,12 +236,14 @@ void indexer::normalizequery()
 	vector<double> d_weight;
 	double tempidf=0,temptf=0;
 	double tmp=0;
+	double floor = 0;
 	for(unsigned int i=0; i<tfquery.size();++i)
 	{
 
 		tmp = tfquery[i];
 	if(tmp==0)
 	{
+
 	tfquery_idf_weight.push_back(0);
 	}
 	else
@@ -215,7 +251,8 @@ void indexer::normalizequery()
 		tempidf = log(docCount/df[i]);
 		temptf = (1+log(tfquery[i]));
 		weight = tempidf*temptf;
-		tfquery_idf_weight.push_back(floorf(weight * 1000) / 1000);
+		floor =floorf(weight * 100) / 100;
+		tfquery_idf_weight.push_back(floor);
 	}
 	}
 

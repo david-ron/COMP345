@@ -37,7 +37,7 @@ vector<string> Tokenizer::stringTokenize(string word)
  */
 vector<string> Tokenizer::tokentoDocument(){
 
-	ifstream ifs(fileName);
+	ifstream ifs(fileName.c_str());
 	    string word;
 	    string newWord;
 	    vector<string> v2;
