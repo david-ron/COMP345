@@ -17,7 +17,8 @@ indexer::indexer()
 	docCount = 0;
 }
 /*!
- * @return int
+ *
+ * @return
  */
 int indexer::mySize()
 {
@@ -28,12 +29,10 @@ int indexer::mySize()
  */
 void indexer::normalize()
 {
-	cout<<df.size()<< "  ";
-	cout<<tf[0].size();
-	cout<<"\n \n \n";
+
 	double tempidf = 0;
 	double temptf = 0;
-	float weight = 0.00;
+	double weight = 0.00;
 	vector<double> d_weight;
 	vector<double> empty;
 	double doc = docCount;
@@ -47,7 +46,6 @@ void indexer::normalize()
 			{
 				tempidf = log(doc/df[i]);
 				temptf = (1+log(tf[j][i]));
-				cout<<temptf<<" tf is  "<<tf[j][i]<<" and idf is"<<tempidf<<endl;
 				weight = tempidf*temptf;
 
 					d_weight.push_back( floorf(weight * 1000) / 1000);
@@ -55,32 +53,14 @@ void indexer::normalize()
 			}
 			else
 			{
-				cout<<0<<" tf is  "<<tf[j][i]<<endl;
 				d_weight.push_back(0);
 			}
 		}
 		tf_idf_weights.push_back(d_weight);
 		d_weight = empty;
+
+
 	}
-//	for(unsigned int i=0; i<tf.size();++i)
-//	{
-//		for(unsigned int j=0; j<tf[0].size();++j)
-//		{
-//			if(tf_idf_weights[j][i]<0.001||tf_idf_weights[j][i]>5){
-//			tf_idf_weights[j][i]=0;}
-//			else{
-//
-//			}
-//		}
-//		}
-//	for(unsigned int i=0; i<tf[0].size();++i)
-//		{
-//			for(unsigned int j=0; j<tf.size();++j)
-//			{
-//
-//				cout<<tf_idf_weights[j][i]<< "  ";
-//			}	cout<<endl;
-//			}
 
 }
 
@@ -88,10 +68,7 @@ void indexer::normalize()
  *
  * @param left
  * @param right
- * @return indexer
- * Overload the operator >>, takes in a document and indexer as a parameter.
- * Takes the given document and insert it into the indexer.
- * Returns the updated indexer at the end.
+ * @return
  */
 indexer & operator >> (indexer & left,Document & right)
 {
@@ -104,21 +81,17 @@ indexer & operator >> (indexer & left,Document & right)
  *
  * @param os
  * @param idx
- * @return ostream
- * Overload of the operator <<
- * Take in and ostream and indexer.
- * Output and appropriate message if the given indexer is not initialized properly.
- * Else, it displays the amount of characters in the document and its content.
+ * @return
  */
 ostream & operator << (ostream & os, indexer & idx)
 {
 	if(idx.indexe[1].size()==-1)
 	{
-		os<<"Error, size seems to not be initialized. "<<"\n";
+		os<<"error size seems to not be initialized "<<"\n";
 	}
 	else if(idx.indexe[1].name()=="")
 	{
-		os<<"Error, name seems to not be initialized.";
+		os<<"seems like there is no file name !!!! :O";
 	}
 	os<<idx.indexe[1].size()<< " is the amount of characters in this document\n";
 	vector<string> tmpfile ;
@@ -133,10 +106,7 @@ ostream & operator << (ostream & os, indexer & idx)
 /*!
  *
  * @param i
- * @return document
- * Overload of the operator []
- * Takes in an integer.
- * Return the document at a given i index from the indexer.
+ * @return
  */
 const Document & indexer::operator[](const int i)
 {
@@ -146,8 +116,6 @@ const Document & indexer::operator[](const int i)
 /*!
  *
  * @param dictionary
- * Takes in a document.
- * This method compute the document frequency and the term frequency within a given document.
  */
 void indexer::dftfFinder(Document & dictionary)
 {
@@ -192,54 +160,113 @@ void indexer::dftfFinder(Document & dictionary)
  * @param mode
  * @return
  */
-//vector<query_result> & indexer::query(string str, int x) {
-//	vector<string> words;
-//	words.push_back(str);
-//	querytfFinder(words);
-//	normalize(words);
-//	vector<query_result> qrs;
-//	query_result qr = query_result();
-//	qrs.push_back(qr);
-//	return qrs;
-//}
+vector<query_result> & indexer::query(string str, int x)
+{
 
-/*!
- * @param diction
- */
+	vector<string> words;
+	Tokenizer t = Tokenizer();
+	words = t.removeSpace(str);
+	querytfFinder(words);
+	normalizequery();
+	score();
+	vector<query_result> qrs;
+	query_result qr = query_result();
+	qrs.push_back(qr);
+	return qrs;
+}
+void indexer::score()
+{
+	double accum = 0., norm = 0.;
+	vector<double> norms;
+
+	for(unsigned int i =0 ;i<tf_idf_weights.size();++i)
+	{
+		for(unsigned int j =0 ;j<tf_idf_weights[0].size();++j){
+		accum = tf_idf_weights[i][j]*tf_idf_weights[i][j];
+		}
+		if(accum==0){
+			norms.push_back(0);}
+		else{
+		norms.push_back(sqrt(accum));}
+	}
+
+	for(unsigned int i =0 ;i<tf_idf_weights.size();++i)
+		{
+	        accum += tfquery_idf_weight[i] * tfquery_idf_weight[i];
+		}
+	norm = sqrt(accum);
+	double topdot=0;
+	vector<double> total_top;
+	double tmp1 = 0., tmp2 = 0.;
+	for(unsigned int i =0 ;i<tf_idf_weights[0].size();++i)
+		{
+			for(unsigned int j =0 ;j<tf_idf_weights.size();++j)
+			{
+				tmp1 = tfquery_idf_weight[j];
+				tmp2 = tf_idf_weights[j][i];
+				topdot += tmp1*tmp2;
+			}
+			total_top.push_back(topdot);
+		}
+	double tmp3 = 0.;
+	vector<double> results;
+	for(unsigned int i =0 ;i<tf_idf_weights[0].size();++i)
+		{
+				tmp1 = norm;
+				tmp2 = norms[i];
+				tmp3 = total_top[i];
+				if(tmp1==0||tmp2==0||tmp3==0){
+					results.push_back(0);}
+				else{
+				results.push_back(tmp3/(tmp1*tmp2));}
+		}
+	for(unsigned int i =0 ;i<tf_idf_weights[0].size();++i)
+			{cout<<results[i]<< "  ";}
+
+}
+
+
 void indexer::indexDictionary(Document & diction)
 {
 	dictionary = diction;
 }
-
-/*!
- *
- * @param words
- */
-void indexer::normalize(vector<string> words)
+void indexer::normalizequery()
 {
-	double weight;
+	double weight=0;
 	vector<double> d_weight;
-
-	for(unsigned int i=0; i<tf.size();++i)
+	double tempidf=0,temptf=0;
+	double tmp=0;
+	double floor = 0;
+	for(unsigned int i=0; i<tfquery.size();++i)
 	{
-	weight = (1 + log(tfquery[i]) * log(docCount/df[i]));
-	tfquery_idf_weight.push_back(weight);
+
+		tmp = tfquery[i];
+	if(tmp==0)
+	{
+
+	tfquery_idf_weight.push_back(0);
 	}
+	else
+	{
+		tempidf = log(docCount/df[i]);
+		temptf = (1+log(tfquery[i]));
+		weight = tempidf*temptf;
+		floor =floorf(weight * 100) / 100;
+		tfquery_idf_weight.push_back(floor);
+	}
+	}
+
 }
 
-/*!
- *
- * @param str
- */
 void indexer::querytfFinder(vector<string> str)
 {
-	float count=0;
+	double count=0;
 	vector<double> empty;
 	vector<string> diction = dictionary.content();
 	vector<string> temp;
-	for(unsigned int j = 0; j<str.size();++j)
-	{
-			for (unsigned int i = 0; i < diction.size(); ++i) {
+	for (unsigned int i = 0; i < diction.size(); ++i) {
+
+		for(unsigned int j = 0; j<str.size();++j) {
 
 				if (str[j] == diction[i])
 				{
@@ -250,14 +277,10 @@ void indexer::querytfFinder(vector<string> str)
 			tfquery.push_back(count);
 				count = 0;
 		}
+
 }
-
-/*!
- * @param dictionary
- * Printing out the result in the good format
- */
-void indexer::print(Document & dictionary) {
-
+void indexer::print(Document & dictionary)
+{
 	string longWord;
 	int longWordNum;
 
