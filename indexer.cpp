@@ -18,7 +18,7 @@ indexer::indexer()
 }
 /*!
  *
- * @return
+ * @return int
  */
 int indexer::mySize()
 {
@@ -68,7 +68,10 @@ void indexer::normalize()
  *
  * @param left
  * @param right
- * @return
++ * @return indexer
+ + * Overload the operator >>, takes in a document and indexer as a parameter.
+ + * Takes the given document and insert it into the indexer.
+ + * Returns the updated indexer at the end.
  */
 indexer & operator >> (indexer & left,Document & right)
 {
@@ -81,17 +84,24 @@ indexer & operator >> (indexer & left,Document & right)
  *
  * @param os
  * @param idx
- * @return
- */
+ * @return ostream
+  * Overload of the operator <<
+  * Take in and ostream and indexer.
+  * Output and appropriate message if the given indexer is not initialized properly.
+- * Else, it displays the amount of charaters in the document and its content.
++ * Else, it displays the amount of characters in the document and its content.
+  */
 ostream & operator << (ostream & os, indexer & idx)
 {
 	if(idx.indexe[1].size()==-1)
 	{
-		os<<"error size seems to not be initialized "<<"\n";
+
+				os<<"Error, size seems to not be initialized. "<<"\n";
 	}
 	else if(idx.indexe[1].name()=="")
 	{
-		os<<"seems like there is no file name !!!! :O";
+
+				os<<"Error, name seems to not be initialized.";
 	}
 	os<<idx.indexe[1].size()<< " is the amount of characters in this document\n";
 	vector<string> tmpfile ;
@@ -106,7 +116,10 @@ ostream & operator << (ostream & os, indexer & idx)
 /*!
  *
  * @param i
- * @return
++ * @return document
+ + * Overload of the operator []
+ + * Takes in an integer.
+ + * Return the document at a given i index from the indexer.
  */
 const Document & indexer::operator[](const int i)
 {
@@ -116,6 +129,8 @@ const Document & indexer::operator[](const int i)
 /*!
  *
  * @param dictionary
+ *  * Takes in a document.
+ + * This method compute the document frequency and the term frequency within a given document.
  */
 void indexer::dftfFinder(Document & dictionary)
 {
@@ -174,6 +189,9 @@ vector<query_result> & indexer::query(string str, int x)
 	qrs.push_back(qr);
 	return qrs;
 }
+/*!
+ *
+ */
 void indexer::score()
 {
 	double accum = 0., norm = 0.;
@@ -225,11 +243,18 @@ void indexer::score()
 
 }
 
-
+/*!
+ + * @param diction
+ + */
 void indexer::indexDictionary(Document & diction)
 {
 	dictionary = diction;
 }
+/*!
+ + *
+ + * @param words
+ + */
+
 void indexer::normalizequery()
 {
 	double weight=0;
@@ -257,7 +282,10 @@ void indexer::normalizequery()
 	}
 
 }
-
+/*!
+ *
+ * @param str
+ */
 void indexer::querytfFinder(vector<string> str)
 {
 	double count=0;
@@ -279,6 +307,11 @@ void indexer::querytfFinder(vector<string> str)
 		}
 
 }
+
+/*!
+ + * @param dictionary
+ + * Printing out the result in the good format
+ + */
 void indexer::print(Document & dictionary)
 {
 	string longWord;
