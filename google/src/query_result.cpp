@@ -11,6 +11,7 @@
  */
 void query_result::info()
 {
+
 	cout<<score<<" "<< doc.name();
 }
 /*!
@@ -30,6 +31,11 @@ query_result::query_result(Document & docc,double scoree)
 	doc = docc;
 }
 
-
+bool scorecomp(const query_result &  left, const query_result & right){
+	return left.score < right.score;
+}
+double query_result::scoree(){
+	return score;
+}
 
 

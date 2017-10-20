@@ -25,5 +25,6 @@ Tokenizer();
 Tokenizer(string fileName);
 vector<string> tokentoDocument();
 vector<string> stringTokenize(string word);
+vector<string> removeSpace(string  s);
 };
 #endif /* TOKENIZER_H_ */

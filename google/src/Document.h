@@ -30,8 +30,8 @@ private:
 	string fileName;
 	long findSize();
 	vector<string> filtedTokens;
+	double score;
 public:
-
 	Document();
 	Document(string fileName);
 	string name();
@@ -45,6 +45,6 @@ public:
 	void changeContent(vector<string> words);
 
 	void compare(Document &dict);
-
+	bool scorecomp(const Document &  left, const Document & right);
 };
 #endif /* DOCUMENT_H_ */

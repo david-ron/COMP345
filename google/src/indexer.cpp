@@ -29,65 +29,38 @@ int indexer::mySize()
  */
 void indexer::normalize()
 {
-	cout<<df.size()<< "  ";
-	cout<<tf[0].size();
-	cout<<"\n \n \n";
+
 	double tempidf = 0;
 	double temptf = 0;
-	float weight = 0.00;
+	double weight = 0.00;
 	vector<double> d_weight;
 	vector<double> empty;
-	double doc = (double)(docCount);
+	double doc = docCount;
 	vector<string> diction = dictionary.content();
 	for(unsigned int i=0; i<tf[0].size();++i)
 	{
 		for(unsigned int j=0; j<tf.size();++j)
 		{
 			double ttf = (double)(tf[j][i]);
-			if(ttf != 0)
+			if(ttf != 0&&df[i]!=doc)
 			{
 				tempidf = log(doc/df[i]);
-				temptf = (1+log((double)tf[j][i]));
-				cout<<temptf*tempidf<<" tf is  "<<tf[j][i]<<endl;
+				temptf = (1+log(tf[j][i]));
 				weight = tempidf*temptf;
-				if(weight<=0.01||weight>5)
-				{
-					d_weight.push_back(0);
-				}
-				else
-				{
-					d_weight.push_back( floorf(weight * 100) / 100);
-				}
+
+					d_weight.push_back( floorf(weight * 1000) / 1000);
 
 			}
 			else
 			{
-				cout<<0<<" tf is  "<<tf[j][i]<<endl;
 				d_weight.push_back(0);
 			}
 		}
 		tf_idf_weights.push_back(d_weight);
 		d_weight = empty;
-	}
-//	for(unsigned int i=0; i<tf.size();++i)
-//	{
-//		for(unsigned int j=0; j<tf[0].size();++j)
-//		{
-//			if(tf_idf_weights[j][i]<0.001||tf_idf_weights[j][i]>5){
-//			tf_idf_weights[j][i]=0;}
-//			else{
-//
-//			}
-//		}
-//		}
-	for(unsigned int i=0; i<tf.size();++i)
-		{
-			for(unsigned int j=0; j<tf[0].size();++j)
-			{
 
-				cout<<tf_idf_weights[i][j]<< "  ";
-			}	cout<<endl;
-			}
+
+	}
 
 }
 
@@ -187,41 +160,116 @@ void indexer::dftfFinder(Document & dictionary)
  * @param mode
  * @return
  */
-vector<query_result> & indexer::query(string str, int x) {
+vector<query_result> & indexer::query(string str, vector<query_result> qrs, int x)
+{
+
 	vector<string> words;
-	words.push_back(str);
+	Tokenizer t = Tokenizer();
+	words = t.removeSpace(str);
 	querytfFinder(words);
-	normalize(words);
-	vector<query_result> qrs;
+	normalizequery();
+	vector<double> scores = score();
 	query_result qr = query_result();
-	qrs.push_back(qr);
+	for(unsigned int i = 0 ; i<scores.size();++i)
+	{
+		cout<<" the scores are " << scores[i] <<"  for their respective order of files unsorted"<<endl;
+		qr = query_result(indexe[i],scores[i]);
+		qrs.push_back(qr);
+	}
 	return qrs;
 }
+vector<double> indexer::score()
+{
+	double accum = 0., norm = 0.;
+	vector<double> norms;
+
+	for(unsigned int i =0 ;i<tf_idf_weights.size();++i)
+	{
+		for(unsigned int j =0 ;j<tf_idf_weights[0].size();++j){
+		accum = tf_idf_weights[i][j]*tf_idf_weights[i][j];
+		}
+		if(accum==0){
+			norms.push_back(0);}
+		else{
+		norms.push_back(sqrt(accum));}
+	}
+
+	for(unsigned int i =0 ;i<tf_idf_weights.size();++i)
+		{
+	        accum += tfquery_idf_weight[i] * tfquery_idf_weight[i];
+		}
+	norm = sqrt(accum);
+	double topdot=0;
+	vector<double> total_top;
+	double tmp1 = 0., tmp2 = 0.;
+	for(unsigned int i =0 ;i<tf_idf_weights[0].size();++i)
+		{
+			for(unsigned int j =0 ;j<tf_idf_weights.size();++j)
+			{
+				tmp1 = tfquery_idf_weight[j];
+				tmp2 = tf_idf_weights[j][i];
+				topdot += tmp1*tmp2;
+			}
+			total_top.push_back(topdot);
+		}
+	double tmp3 = 0.;
+	vector<double> results;
+	for(unsigned int i =0 ;i<tf_idf_weights[0].size();++i)
+		{
+				tmp1 = norm;
+				tmp2 = norms[i];
+				tmp3 = total_top[i];
+				if(tmp1==0||tmp2==0||tmp3==0){
+					results.push_back(0);}
+				else{
+				results.push_back(tmp3/(tmp1*tmp2));}
+		}
+
+	return results;
+}
+
+
 void indexer::indexDictionary(Document & diction)
 {
 	dictionary = diction;
 }
-void indexer::normalize(vector<string> words)
+void indexer::normalizequery()
 {
-	double weight;
+	double weight=0;
 	vector<double> d_weight;
-
-	for(unsigned int i=0; i<tf.size();++i)
+	double tempidf=0,temptf=0;
+	double tmp=0;
+	double floor = 0;
+	for(unsigned int i=0; i<tfquery.size();++i)
 	{
-	weight = (1 + log(tfquery[i]) * log(docCount/df[i]));
-	tfquery_idf_weight.push_back(weight);
+
+		tmp = tfquery[i];
+	if(tmp==0)
+	{
+
+	tfquery_idf_weight.push_back(0);
 	}
+	else
+	{
+		tempidf = log(docCount/df[i]);
+		temptf = (1+log(tfquery[i]));
+		weight = tempidf*temptf;
+		floor =floorf(weight * 100) / 100;
+		tfquery_idf_weight.push_back(floor);
+	}
+	}
+
 }
 
 void indexer::querytfFinder(vector<string> str)
 {
-	float count=0;
+	double count=0;
 	vector<double> empty;
 	vector<string> diction = dictionary.content();
 	vector<string> temp;
-	for(unsigned int j = 0; j<str.size();++j)
-	{
-			for (unsigned int i = 0; i < diction.size(); ++i) {
+	for (unsigned int i = 0; i < diction.size(); ++i) {
+
+		for(unsigned int j = 0; j<str.size();++j) {
 
 				if (str[j] == diction[i])
 				{
@@ -232,4 +280,66 @@ void indexer::querytfFinder(vector<string> str)
 			tfquery.push_back(count);
 				count = 0;
 		}
+
+}
+void indexer::print(Document & dictionary)
+{
+	string longWord;
+	int longWordNum;
+
+	string tempLong="";
+	for (unsigned int i = 0; i < dictionary.content().size(); ++i) {
+		if( dictionary.size() > tempLong.size())
+		{
+			tempLong = dictionary.content()[i];
+		}
+
+		longWord = tempLong;
+		longWordNum = longWord.size();
+	}
+
+
+	string tmd ="DOC";
+	string temps="";
+	cout<<setw(longWordNum + 20) << "" <<" ";
+	for (unsigned int a =0; a <tf.size(); ++a){
+		temps= to_string(a);
+		tmd = tmd + temps;
+		cout << left << setw(longWordNum + 20) << tmd;
+		tmd="DOC";
+	}
+
+	cout<<endl;
+
+	cout<< "Dictionary";
+
+	for (unsigned int k = 0; k < tf.size(); ++k) {
+
+		if (k == 0) {
+			cout << left << setw(longWordNum + 10) << "" << "TF";
+			cout << left << setw(3) << "" << "DF";
+		} else {
+			cout << left << setw(19) << "" << "TF";
+			cout << left << setw(3) << "" << "DF";
+		}
+	}
+
+
+	cout<<endl;
+
+	for (unsigned int i = 0; i < dictionary.content().size(); ++i) {
+
+		for (unsigned int j = 0; j < tf.size(); ++j) {
+
+			if(j==0)
+				cout << left << setw(longWordNum + 20) << dictionary.content()[i] <<  "" << tf[j][i] << "    " <<  df[i] << setw(20) <<  "" << "";
+			else{
+				cout << "" << tf[j][i] << "    " << df[i] << setw(20) <<  "" <<  "";
+			}
+
+
+		}
+		cout<<endl;
+
+	}
 }
