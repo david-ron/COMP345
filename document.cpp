@@ -154,12 +154,12 @@ ostream & operator << (ostream & os, Document & d)
 {
 	if(d.fileSize==-1)
 	{
-		-os<<"error size seems to not be initialized "<<"\n";
+		
 		+os<<"Error, size seems to not be initialized."<<"\n";
 	}
 	else if(d.fileName=="")
 	{
-		-os<<"seems like there is no file name !!!! :O";
+		
 		+os<<"Error, name seems to not be initialized.";
 	}
 	os<<d.fileSize<< " is the amount of characters in this document\n";
