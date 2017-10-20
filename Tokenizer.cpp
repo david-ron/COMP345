@@ -77,3 +77,25 @@ vector<string> Tokenizer::tokentoDocument(){
 	}
 	return tokens;
 	}
+/*!
+ *
+ * @param os
+ * @param t
+ * @return
+ * taking in ostream and a Tokenizer
+ * Overload of the operator <<
+ * Output and appropriate message if the given tokenizer is not initialized properly.
+ * Else, it displays the name of the file.
+ */
+ostream & operator << (ostream & os, Tokenizer & t)
+
+{
+	if(t.fileName=="")
+	{
+		os<<"Error, name seems to not be initialized.";
+	}
+	else{
+		os<<"Here is the name of the file of this Tokenizer:"+ t.fileName ;
+	}
+	return os;
+}

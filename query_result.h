@@ -11,6 +11,7 @@
 #include "document.h"
 
 class query_result{
+	friend std::ostream & operator << (ostream & os, query_result & qr);
 private:
 	Document doc;
 	double score;

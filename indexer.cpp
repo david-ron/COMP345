@@ -108,17 +108,17 @@ indexer & operator >> (indexer & left,Document & right)
  * Overload of the operator <<
  * Take in and ostream and indexer.
  * Output and appropriate message if the given indexer is not initialized properly.
- * Else, it displays the amount of charaters in the document and its content.
+ * Else, it displays the amount of characters in the document and its content.
  */
 ostream & operator << (ostream & os, indexer & idx)
 {
 	if(idx.indexe[1].size()==-1)
 	{
-		os<<"error size seems to not be initialized "<<"\n";
+		os<<"Error, size seems to not be initialized. "<<"\n";
 	}
 	else if(idx.indexe[1].name()=="")
 	{
-		os<<"seems like there is no file name !!!! :O";
+		os<<"Error, name seems to not be initialized.";
 	}
 	os<<idx.indexe[1].size()<< " is the amount of characters in this document\n";
 	vector<string> tmpfile ;

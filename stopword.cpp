@@ -39,4 +39,33 @@ const bool stopword:: operator()(string word)
     }
     return false;
 }
+/*!
+ *
+ * @param os
+ * @param sw
+ * @return os
+ * taking in ostream and a stopword
+ * Overload of the operator <<
+ * Output and appropriate message if the given stopword is not initialized properly.
+ * Else, it displays the content of the vector string.
+ */
+
+ostream & operator << (ostream & os, stopword & sw){
+
+    if(sw.name=="")
+    {
+        os<<"Error, name seems to not be initialized.";
+    }
+    else if(sWord.empty()){
+        os<<"Error, the vector string seems to not be initialized.";
+    }
+    else {
+        os<<"Here is the content of the vector string:";
+        for (vector<string>::iterator it = sw.sWord.begin(); it != sw.sWord.end(); ++it) {
+
+            os << *it << "\n";
+        }
+    }
+    return os;
+}
 

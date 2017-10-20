@@ -147,18 +147,18 @@ void Document::compare(Document & dict){
  * taking in ostream and a document
  * Overload of the operator <<
  * Output and appropriate message if the given document is not initialized properly.
- * Else, it displays the amount of charaters in the document and its content.
+ * Else, it displays the amount of characters in the document and its content.
  */
 ostream & operator << (ostream & os, Document & d)
 
 {
 if(d.fileSize==-1)
 {
-os<<"error size seems to not be initialized "<<"\n";
+os<<"Error, size seems to not be initialized."<<"\n";
 }
 else if(d.fileName=="")
 {
-os<<"seems like there is no file name !!!! :O";
+os<<"Error, name seems to not be initialized.";
 }
 os<<d.fileSize<< " is the amount of characters in this document\n";
 for ( vector<string>::iterator it = d.fileTokens.begin();it != d.fileTokens.end(); ++it )
