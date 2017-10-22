@@ -16,7 +16,7 @@
 #include <algorithm>
 
 using namespace std;
-friend std::ostream & operator << (ostream & os, Tokenizer & t);
+//input stream of <char> type to string and formatting of words &&count chars
 class Tokenizer{
 private:
 	string fileName;

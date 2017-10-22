@@ -40,7 +40,6 @@ int main()
 	dictionary->toCreateDictionary(*doc);
 	dictionary->sorting();
 	dictionary->duplicateRemove();
-	cout<<"stopwords printing"<<endl;
 	Document *docStop = new Document ("stop.txt");
 //	indexer idxStop = indexer();
 //	idxStop >> *docStop;
@@ -51,5 +50,9 @@ int main()
 	idx2->dftfFinder(*stopDict);
 	idx2->normalize();
 	idx2->indexDictionary(*stopDict);
-	idx2->query("help you figure");
+	vector<query_result> ranks;
+	idx2->query("help you figure",ranks,5);
+	//sort(ranks.begin(),ranks.end(),scorecomp);
+	for(unsigned int i =0 ; i<ranks.size(); ++i){
+	cout<<(ranks[i].scoree());}
 }

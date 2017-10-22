@@ -11,8 +11,7 @@
 #include "document.h"
 
 class query_result{
-
-	friend std::ostream & operator << (ostream & os, query_result & qr);
+	friend bool scorecomp(const query_result &  left, const query_result & right);
 private:
 	Document doc;
 	double score;
@@ -21,7 +20,7 @@ public:
 	query_result();
 	query_result(Document & docc,double scoree);
 	void info();
-	void uwtfFinder(vector<string> str, Document & dictionary);
+	double scoree();
 };
 
 #endif /* QUERY_RESULT_H_ */

@@ -60,7 +60,7 @@ ostream & operator << (ostream & os, stopword & sw){
             {
                         os<<"Error, name seems to not be initialized.";
                     }
-           else if(sWord.empty()){
+           else if(sw.sWord.empty()){
                os<<"Error, the vector string seems to not be initialized.";
            }
         else {
