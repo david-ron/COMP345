@@ -1,10 +1,3 @@
-/*
- * tokenizer.cpp
- *
- *  Created on: Oct 14, 2017
- *      Author: David
- */
-
 #include "tokenizer.h"
 
 /*!
@@ -16,25 +9,20 @@ Tokenizer::Tokenizer(){
 /*!
  *
  * @param fileName
+ * Parametrized constructor
  */
 Tokenizer::Tokenizer(string fileName){
 	this->fileName = fileName;
 }
-/*!
- *
- * @param word
- * @return
- */
-vector<string> Tokenizer::stringTokenize(string word)
-{
-	//supposed to tokenize for ws
-	vector<string> words;
-	return words;
-}
+
 /*!
  *
  * @return
- */
+ * @return vector<string>
+ * This method reads from a file, remove punctuation and insert
+ * back the different words into a vector of string.
+ * It return that vector at the end.
+   */
 vector<string> Tokenizer::tokentoDocument(){
 
 	ifstream ifs(fileName.c_str());
@@ -58,11 +46,20 @@ vector<string> Tokenizer::tokentoDocument(){
 
 	    return v2;
 }
+/*!
+ + * @param s
+ + * @return vector<string>
+ + * This methods takes a string and iterate through every character
+ + * by checking if it is an space, if so it continues until it reaches a character.
+ + * Once it hits one, it keeps of the position of the first character and the last and
+ + * insert the corresponding word into the vector string.
+ + * Once it has iterate through all the characters, the method return the vector string.
+ + */
 vector<string> Tokenizer::removeSpace (string  s) {
 
 vector<string> tokens;
-int i = 0;
-int j = 0;
+unsigned int i = 0;
+unsigned int j = 0;
 
 while (i != s.size() && j != s.size()) {
 
@@ -80,4 +77,26 @@ while (i != s.size() && j != s.size()) {
     }
 }
 return tokens;
+}
+/*!
+ + *
+ + * @param os
+ + * @param t
+ + * @return
+ + * taking in ostream and a Tokenizer
+ + * Overload of the operator <<
+ + * Output and appropriate message if the given tokenizer is not initialized properly.
+ + * Else, it displays the name of the file.
+ + */
+ostream & operator << (ostream & os, Tokenizer & t)
+
+{
+	if(t.fileName=="")
+	{
+		os<<"Error, name seems to not be initialized.";
+	}
+	else{
+		os<<"Here is the name of the file of this Tokenizer:"+ t.fileName ;
+	}
+	return os;
 }

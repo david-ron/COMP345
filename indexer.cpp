@@ -160,7 +160,7 @@ void indexer::dftfFinder(Document & dictionary)
  * @param mode
  * @return
  */
-vector<query_result> & indexer::query(string str, int x)
+vector<query_result> & indexer::query(string str, vector<query_result> qrs, int x)
 {
 
 	vector<string> words;
@@ -168,13 +168,17 @@ vector<query_result> & indexer::query(string str, int x)
 	words = t.removeSpace(str);
 	querytfFinder(words);
 	normalizequery();
-	score();
-	vector<query_result> qrs;
+	vector<double> scores = score();
 	query_result qr = query_result();
-	qrs.push_back(qr);
+	for(unsigned int i = 0 ; i<scores.size();++i)
+	{
+		cout<<" the scores are " << scores[i] <<"  for their respective order of files unsorted"<<endl;
+		qr = query_result(indexe[i],scores[i]);
+		qrs.push_back(qr);
+	}
 	return qrs;
 }
-void indexer::score()
+vector<double> indexer::score()
 {
 	double accum = 0., norm = 0.;
 	vector<double> norms;
@@ -220,9 +224,8 @@ void indexer::score()
 				else{
 				results.push_back(tmp3/(tmp1*tmp2));}
 		}
-	for(unsigned int i =0 ;i<tf_idf_weights[0].size();++i)
-			{cout<<results[i]<< "  ";}
 
+	return results;
 }
 
 
@@ -279,6 +282,10 @@ void indexer::querytfFinder(vector<string> str)
 		}
 
 }
+/*!
+ + * @param dictionary
+ + * Printing out the result in the good format
+ + */
 void indexer::print(Document & dictionary)
 {
 	string longWord;

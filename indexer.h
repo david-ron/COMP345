@@ -46,13 +46,13 @@ public:
     void dftfFinder(Document & dictionary);
     // not sure where to place this
     void dictionaryCreation();
-    vector<query_result> & query(string str, int mode = 10);
+    vector<query_result> & query(string str, vector<query_result> qrs, int mode = 10);
     vector<int> getdf();
     void normalizequery();
     void querytfFinder(vector<string> str);
     void indexDictionary(Document & diction);
     void print(Document & dictionary);
-    void score();
+    vector<double> score();
 };
 
 #endif /* INDEXER_H_ */

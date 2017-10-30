@@ -11,8 +11,9 @@
  *default constructor
  */
 	Document::Document(){
-		fileName = "";
-		fileSize = -1;
+		score=0;
+		fileName="";
+		fileSize=-1;
 	}
 /*!
  *
@@ -24,13 +25,26 @@
 		Tokenizer *t = new Tokenizer(fileName);
 
 		fileTokens = t->tokentoDocument();
-		sort(fileTokens.begin(), fileTokens.end());
+		sort(fileTokens.begin(),fileTokens.end());
+		string tmpword =""; // needs a custom (private function to clean up :))
+		int ctr=1;
+		for(vector<string>::iterator it = fileTokens.begin(); it != fileTokens.end();++it)
+		{
+			if(*it==tmpword){
+				ctr++;
+			tokenMap.insert(make_pair(*it,ctr));
+			}
+			else{
+				tmpword = *it;
+				tokenMap.insert(make_pair(*it,ctr));
+			ctr = 1;
+			}
+		}
 		fileSize = findSize();
 	}
 /*!
  *
  * @return
- * returning files name
  */
 	string Document::name()
 	{
@@ -108,7 +122,9 @@
 	{
 		fileTokens = words;
 	}
-
+	unordered_map<string,int> Document::getMap(){
+		return tokenMap;
+	}
 
 void Document::compare(Document & dict){
 
@@ -154,3 +170,5 @@ for ( vector<string>::iterator it = d.fileTokens.begin();it != d.fileTokens.end(
     }
 return os;
 }
+
+

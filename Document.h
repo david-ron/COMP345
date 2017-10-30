@@ -14,7 +14,7 @@
 #include <algorithm>
 #include <vector>
 #include <iomanip>
-
+#include <unordered_map>
 
 #include "tokenizer.h"
 using namespace std;
@@ -30,8 +30,9 @@ private:
 	string fileName;
 	long findSize();
 	vector<string> filtedTokens;
+	double score;
+	unordered_map<string,int> tokenMap;
 public:
-
 	Document();
 	Document(string fileName);
 	string name();
@@ -43,8 +44,8 @@ public:
 	void duplicateRemove();
 
 	void changeContent(vector<string> words);
-
+	unordered_map<string,int> getMap();
 	void compare(Document &dict);
-
+	bool scorecomp(const Document &  left, const Document & right);
 };
 #endif /* DOCUMENT_H_ */

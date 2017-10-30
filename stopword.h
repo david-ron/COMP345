@@ -21,8 +21,8 @@ using namespace std;
 class stopword{
 
 
-
-
+    friend std::ostream & operator << (ostream & os, stopword & sw);
+    
 private:
 
     string name;
