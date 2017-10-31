@@ -108,7 +108,7 @@ ostream & operator << (ostream & os, indexer & idx)
  * @param i
  * @return
  */
-const Document & indexer::operator[](const int i)
+const Document & indexer::operator[] (const int i)
 {
 	return indexe[i];
 }
@@ -122,19 +122,10 @@ void indexer::dftfFinder(Document & dictionary)
 	double count=0;
 	vector<double> counter;
 	vector<double> empty;
-	vector<string> diction = dictionary.content();
-	vector<string> temp;
 	for(unsigned int n0=0; n0 < indexe.size(); ++n0) {
-		for (unsigned int n1 = 0; n1 < diction.size(); ++n1) {
-			temp = indexe[n0].content();
-			for (unsigned int n2 = 0; n2 < temp.size(); ++n2) {
+		for (unsigned int n1 = 0; n1 < dictionary.content().size(); ++n1) {
 
-				if (diction[n1] == temp[n2])
-				{
-					++count;
-				}
-			}
-			counter.push_back(count);
+			counter.push_back(indexe[n0].getMap()[dictionary.content()[n1]]);
 			count = 0;
 		}
 		tf.push_back(counter);

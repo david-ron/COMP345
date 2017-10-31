@@ -47,5 +47,6 @@ public:
 	unordered_map<string,int> getMap();
 	void compare(Document &dict);
 	bool scorecomp(const Document &  left, const Document & right);
+
 };
 #endif /* DOCUMENT_H_ */
