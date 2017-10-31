@@ -151,7 +151,7 @@ void indexer::dftfFinder(Document & dictionary)
  * @param mode
  * @return
  */
-vector<query_result> & indexer::query(string str, vector<query_result> qrs, int x)
+vector<query_result>  indexer::query(string str, int x)
 {
 
 	vector<string> words;
@@ -161,6 +161,7 @@ vector<query_result> & indexer::query(string str, vector<query_result> qrs, int 
 	normalizequery();
 	vector<double> scores = score();
 	query_result qr = query_result();
+	vector<query_result> qrs;
 	for(unsigned int i = 0 ; i<scores.size();++i)
 	{
 		cout<<" the scores are " << scores[i] <<"  for their respective order of files unsorted"<<endl;

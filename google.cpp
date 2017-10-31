@@ -49,8 +49,8 @@ int main()
 	idx2->normalize();
 	idx2->indexDictionary(*stopDict);
 	vector<query_result> ranks;
-	idx2->query("help you figure",ranks,5);
-	//sort(ranks.begin(),ranks.end(),scorecomp);
+	ranks = idx2->query("help you figure",5);
+	sort(ranks.begin(),ranks.end(),query_result::scorecomp);
 	for(unsigned int i =0 ; i<ranks.size(); ++i){
-	cout<<(ranks[i].scoree());}
+	ranks[i].info();}
 }

@@ -12,7 +12,7 @@
 
 class query_result{
 	friend std::ostream & operator << (ostream & os, query_result & qr);
-	friend bool scorecomp(const query_result &  left, const query_result & right);
+
 private:
 	Document doc;
 	double score;
@@ -22,6 +22,7 @@ public:
 	query_result(Document & docc,double scoree);
 	void info();
 	double scoree();
+	static bool scorecomp(const query_result &  left, const query_result & right);
 };
 
 #endif /* QUERY_RESULT_H_ */
