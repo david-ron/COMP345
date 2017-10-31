@@ -17,14 +17,13 @@
 
 using namespace std;
 //input stream of <char> type to string and formatting of words &&count chars
-class Tokenizer{
+class tokenizer{
 private:
 	string fileName;
 public:
-Tokenizer();
-Tokenizer(string fileName);
+tokenizer();
+tokenizer(string fileName);
 vector<string> tokentoDocument();
 vector<string> stringTokenize(string word);
-vector<string> removeSpace(string  s);
 };
 #endif /* TOKENIZER_H_ */

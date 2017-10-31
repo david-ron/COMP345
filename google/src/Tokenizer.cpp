@@ -10,14 +10,14 @@
 /*!
  *default constructor
  */
-Tokenizer::Tokenizer(){
+tokenizer::tokenizer(){
 	fileName = "";
 }
 /*!
  *
  * @param fileName
  */
-Tokenizer::Tokenizer(string fileName){
+tokenizer::tokenizer(string fileName){
 	this->fileName = fileName;
 }
 /*!
@@ -25,7 +25,7 @@ Tokenizer::Tokenizer(string fileName){
  * @param word
  * @return
  */
-vector<string> Tokenizer::stringTokenize(string word)
+vector<string> tokenizer::stringTokenize(string word)
 {
 	//supposed to tokenize for ws
 	vector<string> words;
@@ -35,9 +35,9 @@ vector<string> Tokenizer::stringTokenize(string word)
  *
  * @return
  */
-vector<string> Tokenizer::tokentoDocument(){
+vector<string> tokenizer::tokentoDocument(){
 
-	ifstream ifs(fileName.c_str());
+	ifstream ifs(fileName);
 	    string word;
 	    string newWord;
 	    vector<string> v2;
@@ -58,26 +58,4 @@ vector<string> Tokenizer::tokentoDocument(){
 
 	    return v2;
 }
-vector<string> Tokenizer::removeSpace (string  s) {
 
-vector<string> tokens;
-int i = 0;
-int j = 0;
-
-while (i != s.size() && j != s.size()) {
-
-    while (i != s.size() && isspace(s[i])){
-        ++i;
-        j = i;
-    }
-    while (j != s.size() && !isspace(s[j])) {
-        j++;
-    }
-
-    if (i != j) {
-        tokens.push_back(s.substr(i, j - i));
-        i = j;
-    }
-}
-return tokens;
-}
