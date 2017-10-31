@@ -286,8 +286,8 @@ void indexer::querytfFinder(vector<string> str)
  + * @param dictionary
  + * Printing out the result in the good format
  + */
-void indexer::print(Document & dictionary)
-{
+void indexer::print(Document & dictionary) {
+
 	string longWord;
 	int longWordNum;
 
@@ -305,8 +305,8 @@ void indexer::print(Document & dictionary)
 
 	string tmd ="DOC";
 	string temps="";
-	cout<<setw(longWordNum + 20) << "" <<" ";
-	for (unsigned int a =0; a <tf.size(); ++a){
+	cout<<setw(longWordNum + 40) << "" <<" ";
+	for (unsigned int a =1; a <tf.size(); ++a){
 		temps= to_string(a);
 		tmd = tmd + temps;
 		cout << left << setw(longWordNum + 20) << tmd;
@@ -315,19 +315,18 @@ void indexer::print(Document & dictionary)
 
 	cout<<endl;
 
-	cout<< "Dictionary";
+	cout<< "DICTIONARY";
 
 	for (unsigned int k = 0; k < tf.size(); ++k) {
 
 		if (k == 0) {
-			cout << left << setw(longWordNum + 10) << "" << "TF";
-			cout << left << setw(3) << "" << "DF";
+			cout << left << setw(longWordNum + 10) << "" << "DF";
 		} else {
 			cout << left << setw(19) << "" << "TF";
-			cout << left << setw(3) << "" << "DF";
+			cout << left << setw(3) << "" << "  ";
 		}
-	}
 
+	}
 
 	cout<<endl;
 
@@ -336,14 +335,72 @@ void indexer::print(Document & dictionary)
 		for (unsigned int j = 0; j < tf.size(); ++j) {
 
 			if(j==0)
-				cout << left << setw(longWordNum + 20) << dictionary.content()[i] <<  "" << tf[j][i] << "    " <<  df[i] << setw(20) <<  "" << "";
+				cout << left << setw(longWordNum + 20) << dictionary.content()[i] << df[i] << setw(20) <<  "" << "";
 			else{
-				cout << "" << tf[j][i] << "    " << df[i] << setw(20) <<  "" <<  "";
+				cout << "" << tf[j][i] << "     " << setw(20) <<  "" <<  "";
 			}
-
 
 		}
 		cout<<endl;
 
 	}
+
+	cout<<endl;
+	cout<<"Weight Printing"<<endl;
+
+	for(unsigned int j=0; j<tf.size();++j)
+	{
+		for(unsigned int i=0; i<tf[0].size();++i)
+		{
+			cout<< setw(5) << tf_idf_weights[i][j]<< "  ";
+		}
+		cout<<endl;
+	}
 }
+
+//int main()
+//{
+//	Document *doc1 = new Document("file1.txt");
+//
+//	Document *doc0 = new Document("file2.txt");
+//	Document *doc2 = new Document("file3.txt");
+//
+//	indexer *idx2 = new indexer();
+//	(*idx2)>>*doc0;
+//	(*idx2)>>*doc1;
+//	(*idx2)>>*doc0;
+//	(*idx2)>>*doc2;
+//
+//
+//	Document *dictionary = new Document();
+//	Document *doc = new Document();
+//
+//	int i = 1;
+//	*doc = (*idx2)[i];
+//	dictionary->toCreateDictionary(*doc);
+//	i = 0;
+//	*doc = (*idx2)[i];
+//	dictionary->toCreateDictionary(*doc);
+//	i=2;
+//	*doc = (*idx2)[i];
+//	dictionary->toCreateDictionary(*doc);
+//	i=3;
+//	*doc = (*idx2)[i];
+//	dictionary->toCreateDictionary(*doc);
+//
+//	dictionary->sorting();
+//	dictionary->duplicateRemove();
+//
+//
+//	Document *docStop = new Document ("stop.txt");
+//
+//	Document *stopDict = new Document ();
+//	stopDict->compare(*dictionary);
+//	stopDict->sorting();
+//
+//	idx2->dftfFinder(*stopDict);
+//	idx2->normalize();
+//	idx2->indexDictionary(*stopDict);
+//
+//	idx2->print(*stopDict);
+//}
