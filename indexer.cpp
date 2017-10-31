@@ -18,7 +18,7 @@ indexer::indexer()
 }
 /*!
  *
- * @return int
+ * @return
  */
 int indexer::mySize()
 {
@@ -68,10 +68,7 @@ void indexer::normalize()
  *
  * @param left
  * @param right
-+ * @return indexer
- + * Overload the operator >>, takes in a document and indexer as a parameter.
- + * Takes the given document and insert it into the indexer.
- + * Returns the updated indexer at the end.
+ * @return
  */
 indexer & operator >> (indexer & left,Document & right)
 {
@@ -84,24 +81,17 @@ indexer & operator >> (indexer & left,Document & right)
  *
  * @param os
  * @param idx
- * @return ostream
-  * Overload of the operator <<
-  * Take in and ostream and indexer.
-  * Output and appropriate message if the given indexer is not initialized properly.
-- * Else, it displays the amount of charaters in the document and its content.
-+ * Else, it displays the amount of characters in the document and its content.
-  */
+ * @return
+ */
 ostream & operator << (ostream & os, indexer & idx)
 {
 	if(idx.indexe[1].size()==-1)
 	{
-
-				os<<"Error, size seems to not be initialized. "<<"\n";
+		os<<"error size seems to not be initialized "<<"\n";
 	}
 	else if(idx.indexe[1].name()=="")
 	{
-
-				os<<"Error, name seems to not be initialized.";
+		os<<"seems like there is no file name !!!! :O";
 	}
 	os<<idx.indexe[1].size()<< " is the amount of characters in this document\n";
 	vector<string> tmpfile ;
@@ -116,12 +106,9 @@ ostream & operator << (ostream & os, indexer & idx)
 /*!
  *
  * @param i
-+ * @return document
- + * Overload of the operator []
- + * Takes in an integer.
- + * Return the document at a given i index from the indexer.
+ * @return
  */
-const Document & indexer::operator[](const int i)
+const Document & indexer::operator[] (const int i)
 {
 	return indexe[i];
 }
@@ -129,27 +116,16 @@ const Document & indexer::operator[](const int i)
 /*!
  *
  * @param dictionary
- *  * Takes in a document.
- + * This method compute the document frequency and the term frequency within a given document.
  */
 void indexer::dftfFinder(Document & dictionary)
 {
 	double count=0;
 	vector<double> counter;
 	vector<double> empty;
-	vector<string> diction = dictionary.content();
-	vector<string> temp;
 	for(unsigned int n0=0; n0 < indexe.size(); ++n0) {
-		for (unsigned int n1 = 0; n1 < diction.size(); ++n1) {
-			temp = indexe[n0].content();
-			for (unsigned int n2 = 0; n2 < temp.size(); ++n2) {
+		for (unsigned int n1 = 0; n1 < dictionary.content().size(); ++n1) {
 
-				if (diction[n1] == temp[n2])
-				{
-					++count;
-				}
-			}
-			counter.push_back(count);
+			counter.push_back(indexe[n0].getMap()[dictionary.content()[n1]]);
 			count = 0;
 		}
 		tf.push_back(counter);
@@ -175,7 +151,7 @@ void indexer::dftfFinder(Document & dictionary)
  * @param mode
  * @return
  */
-vector<query_result> & indexer::query(string str, int x)
+vector<query_result>  indexer::query(string str, int x)
 {
 
 	vector<string> words;
@@ -183,16 +159,18 @@ vector<query_result> & indexer::query(string str, int x)
 	words = t.removeSpace(str);
 	querytfFinder(words);
 	normalizequery();
-	score();
-	vector<query_result> qrs;
+	vector<double> scores = score();
 	query_result qr = query_result();
-	qrs.push_back(qr);
+	vector<query_result> qrs;
+	for(unsigned int i = 0 ; i<scores.size();++i)
+	{
+		cout<<" the scores are " << scores[i] <<"  for their respective order of files unsorted"<<endl;
+		qr = query_result(indexe[i],scores[i]);
+		qrs.push_back(qr);
+	}
 	return qrs;
 }
-/*!
- *
- */
-void indexer::score()
+vector<double> indexer::score()
 {
 	double accum = 0., norm = 0.;
 	vector<double> norms;
@@ -238,23 +216,15 @@ void indexer::score()
 				else{
 				results.push_back(tmp3/(tmp1*tmp2));}
 		}
-	for(unsigned int i =0 ;i<tf_idf_weights[0].size();++i)
-			{cout<<results[i]<< "  ";}
 
+	return results;
 }
 
-/*!
- + * @param diction
- + */
+
 void indexer::indexDictionary(Document & diction)
 {
 	dictionary = diction;
 }
-/*!
- + *
- + * @param words
- + */
-
 void indexer::normalizequery()
 {
 	double weight=0;
@@ -282,10 +252,7 @@ void indexer::normalizequery()
 	}
 
 }
-/*!
- *
- * @param str
- */
+
 void indexer::querytfFinder(vector<string> str)
 {
 	double count=0;
@@ -307,13 +274,12 @@ void indexer::querytfFinder(vector<string> str)
 		}
 
 }
-
 /*!
  + * @param dictionary
  + * Printing out the result in the good format
  + */
-void indexer::print(Document & dictionary)
-{
+void indexer::print(Document & dictionary) {
+
 	string longWord;
 	int longWordNum;
 
@@ -331,8 +297,8 @@ void indexer::print(Document & dictionary)
 
 	string tmd ="DOC";
 	string temps="";
-	cout<<setw(longWordNum + 20) << "" <<" ";
-	for (unsigned int a =0; a <tf.size(); ++a){
+	cout<<setw(longWordNum + 40) << "" <<" ";
+	for (unsigned int a =1; a <tf.size(); ++a){
 		temps= to_string(a);
 		tmd = tmd + temps;
 		cout << left << setw(longWordNum + 20) << tmd;
@@ -341,19 +307,18 @@ void indexer::print(Document & dictionary)
 
 	cout<<endl;
 
-	cout<< "Dictionary";
+	cout<< "DICTIONARY";
 
 	for (unsigned int k = 0; k < tf.size(); ++k) {
 
 		if (k == 0) {
-			cout << left << setw(longWordNum + 10) << "" << "TF";
-			cout << left << setw(3) << "" << "DF";
+			cout << left << setw(longWordNum + 10) << "" << "DF";
 		} else {
 			cout << left << setw(19) << "" << "TF";
-			cout << left << setw(3) << "" << "DF";
+			cout << left << setw(3) << "" << "  ";
 		}
-	}
 
+	}
 
 	cout<<endl;
 
@@ -362,61 +327,72 @@ void indexer::print(Document & dictionary)
 		for (unsigned int j = 0; j < tf.size(); ++j) {
 
 			if(j==0)
-				cout << left << setw(longWordNum + 20) << dictionary.content()[i] <<  "" << tf[j][i] << "    " <<  df[i] << setw(20) <<  "" << "";
+				cout << left << setw(longWordNum + 20) << dictionary.content()[i] << df[i] << setw(20) <<  "" << "";
 			else{
-				cout << "" << tf[j][i] << "    " << df[i] << setw(20) <<  "" <<  "";
+				cout << "" << tf[j][i] << "     " << setw(20) <<  "" <<  "";
 			}
-
 
 		}
 		cout<<endl;
 
 	}
+
+	cout<<endl;
+	cout<<"Weight Printing"<<endl;
+
+	for(unsigned int j=0; j<tf.size();++j)
+	{
+		for(unsigned int i=0; i<tf[0].size();++i)
+		{
+			cout<< setw(5) << tf_idf_weights[i][j]<< "  ";
+		}
+		cout<<endl;
+	}
 }
 
-int main()
-{
-	Document *doc1 = new Document("file1.txt");
-
-	Document *doc0 = new Document("file2.txt");
-	Document *doc2 = new Document("file3.txt");
-
-	indexer *idx2 = new indexer();
-	(*idx2)>>*doc0;
-	(*idx2)>>*doc1;
-	(*idx2)>>*doc0;
-	(*idx2)>>*doc2;
-
-
-	Document *dictionary = new Document();
-	Document *doc = new Document();
-
-	int i = 1;
-	*doc = (*idx2)[i];
-	dictionary->toCreateDictionary(*doc);
-	i = 0;
-	*doc = (*idx2)[i];
-	dictionary->toCreateDictionary(*doc);
-	i=2;
-	*doc = (*idx2)[i];
-	dictionary->toCreateDictionary(*doc);
-	i=3;
-	*doc = (*idx2)[i];
-	dictionary->toCreateDictionary(*doc);
-
-	dictionary->sorting();
-	dictionary->duplicateRemove();
-
-
-	Document *docStop = new Document ("stop.txt");
-
-	Document *stopDict = new Document ();
-	stopDict->compare(*dictionary);
-	stopDict->sorting();
-
-	idx2->dftfFinder(*stopDict);
-	idx2->normalize();
-	idx2->indexDictionary(*stopDict);
-
-	idx2->print(*stopDict);
-}
+//int main()
+//{
+//	Document *doc1 = new Document("file1.txt");
+//
+//	Document *doc0 = new Document("file2.txt");
+//	Document *doc2 = new Document("file3.txt");
+//
+//	indexer *idx2 = new indexer();
+//	(*idx2)>>*doc0;
+//	(*idx2)>>*doc1;
+//	(*idx2)>>*doc0;
+//	(*idx2)>>*doc2;
+//
+//
+//	Document *dictionary = new Document();
+//	Document *doc = new Document();
+//
+//	int i = 1;
+//	*doc = (*idx2)[i];
+//	dictionary->toCreateDictionary(*doc);
+//	i = 0;
+//	*doc = (*idx2)[i];
+//	dictionary->toCreateDictionary(*doc);
+//	i=2;
+//	*doc = (*idx2)[i];
+//	dictionary->toCreateDictionary(*doc);
+//	i=3;
+//	*doc = (*idx2)[i];
+//	dictionary->toCreateDictionary(*doc);
+//
+//	dictionary->sorting();
+//	dictionary->duplicateRemove();
+//
+//
+//	Document *docStop = new Document ("stop.txt");
+//
+//	Document *stopDict = new Document ();
+//	stopDict->compare(*dictionary);
+//	stopDict->sorting();
+//
+//	idx2->dftfFinder(*stopDict);
+//	idx2->normalize();
+//	idx2->indexDictionary(*stopDict);
+//
+//	idx2->print(*stopDict);
+//}
