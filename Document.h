@@ -17,11 +17,12 @@
 #include <unordered_map>
 
 #include "tokenizer.h"
+#include "index_item.h"
 using namespace std;
 
 
 
-class Document {
+class Document : private index_item {
 friend std::ostream & operator<<(std::ostream & os,
 		Document & d);
 private:
