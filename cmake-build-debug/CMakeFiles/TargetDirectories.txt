@@ -1,3 +1,0 @@
-C:/Users/Sai Shan/Desktop/COMP345/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Sai Shan/Desktop/COMP345/cmake-build-debug/CMakeFiles/COMP345.dir
-C:/Users/Sai Shan/Desktop/COMP345/cmake-build-debug/CMakeFiles/rebuild_cache.dir
