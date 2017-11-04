@@ -16,8 +16,9 @@
 #include <algorithm>
 
 using namespace std;
-friend std::ostream & operator << (ostream & os, Tokenizer & t);
+
 class Tokenizer{
+	friend std::ostream & operator << (ostream & os, Tokenizer & t);
 private:
 	string fileName;
 public:

@@ -85,16 +85,16 @@
 		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/Document.h">
 			<Option target="COMP345"/>
 		</Unit>
-		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/README.md">
-			<Option target="COMP345"/>
-		</Unit>
-		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/Readmeass1.txt">
-			<Option target="COMP345"/>
-		</Unit>
 		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/Tokenizer.cpp">
 			<Option target="COMP345"/>
 		</Unit>
 		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/Tokenizer.h">
+			<Option target="COMP345"/>
+		</Unit>
+		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/abstract_tokenizer.cpp">
+			<Option target="COMP345"/>
+		</Unit>
+		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/abstract_tokenizer.h">
 			<Option target="COMP345"/>
 		</Unit>
 		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/document.cpp">
@@ -103,52 +103,19 @@
 		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/document.h">
 			<Option target="COMP345"/>
 		</Unit>
-		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/file1.txt">
+		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/document_indexer.cpp">
 			<Option target="COMP345"/>
 		</Unit>
-		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/file2.txt">
+		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/document_indexer.h">
 			<Option target="COMP345"/>
 		</Unit>
-		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/file3.txt">
+		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/google.cpp">
 			<Option target="COMP345"/>
 		</Unit>
-		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/google/src/Document.h">
+		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/index_item.cpp">
 			<Option target="COMP345"/>
 		</Unit>
-		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/google/src/document.cpp">
-			<Option target="COMP345"/>
-		</Unit>
-		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/google/src/document.h">
-			<Option target="COMP345"/>
-		</Unit>
-		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/google/src/google.cpp">
-			<Option target="COMP345"/>
-		</Unit>
-		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/google/src/indexer.cpp">
-			<Option target="COMP345"/>
-		</Unit>
-		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/google/src/indexer.h">
-			<Option target="COMP345"/>
-		</Unit>
-		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/google/src/query_result.cpp">
-			<Option target="COMP345"/>
-		</Unit>
-		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/google/src/query_result.h">
-			<Option target="COMP345"/>
-		</Unit>
-		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/google/src/stopword.cpp">
-			<Option target="COMP345"/>
-		</Unit>
-		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/google/src/stopword.h">
-			<Option target="COMP345"/>
-		</Unit>
-		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/google/src/tokenizer.cpp">
-			<Option target="COMP345"/>
-		</Unit>
-		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/google/src/tokenizer.h">
-			<Option target="COMP345"/>
-		</Unit>
-		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/index.txt">
+		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/index_item.h">
 			<Option target="COMP345"/>
 		</Unit>
 		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/indexer.cpp">
@@ -157,7 +124,7 @@
 		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/indexer.h">
 			<Option target="COMP345"/>
 		</Unit>
-		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/printing out weights.txt">
+		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/indexing.cpp">
 			<Option target="COMP345"/>
 		</Unit>
 		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/query_result.cpp">
@@ -166,7 +133,22 @@
 		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/query_result.h">
 			<Option target="COMP345"/>
 		</Unit>
-		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/stop.txt">
+		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/sentence.cpp">
+			<Option target="COMP345"/>
+		</Unit>
+		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/sentence.h">
+			<Option target="COMP345"/>
+		</Unit>
+		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/sentence_indexer.cpp">
+			<Option target="COMP345"/>
+		</Unit>
+		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/sentence_indexer.h">
+			<Option target="COMP345"/>
+		</Unit>
+		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/sentence_tokenizer.cpp">
+			<Option target="COMP345"/>
+		</Unit>
+		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/sentence_tokenizer.h">
 			<Option target="COMP345"/>
 		</Unit>
 		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/stopword.cpp">
@@ -175,7 +157,40 @@
 		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/stopword.h">
 			<Option target="COMP345"/>
 		</Unit>
-		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/stopwords.txt">
+		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/summarizer.cpp">
+			<Option target="COMP345"/>
+		</Unit>
+		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/textFiles/README.md">
+			<Option target="COMP345"/>
+		</Unit>
+		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/textFiles/Readmeass1.txt">
+			<Option target="COMP345"/>
+		</Unit>
+		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/textFiles/file1.txt">
+			<Option target="COMP345"/>
+		</Unit>
+		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/textFiles/file2.txt">
+			<Option target="COMP345"/>
+		</Unit>
+		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/textFiles/file3.txt">
+			<Option target="COMP345"/>
+		</Unit>
+		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/textFiles/index.txt">
+			<Option target="COMP345"/>
+		</Unit>
+		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/textFiles/printing out weights.txt">
+			<Option target="COMP345"/>
+		</Unit>
+		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/textFiles/stop.txt">
+			<Option target="COMP345"/>
+		</Unit>
+		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/textFiles/stopwords.txt">
+			<Option target="COMP345"/>
+		</Unit>
+		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/word_tokenizer.cpp">
+			<Option target="COMP345"/>
+		</Unit>
+		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/word_tokenizer.h">
 			<Option target="COMP345"/>
 		</Unit>
 		<Unit filename="C:/Users/Sai Shan/Desktop/COMP345/CMakeLists.txt">

@@ -4,35 +4,25 @@ project(COMP345)
 set(CMAKE_CXX_STANDARD 11)
 
 set(SOURCE_FILES
-        google/src/document.cpp
-        google/src/Document.h
-        google/src/google.cpp
-        google/src/indexer.cpp
-        google/src/indexer.h
-        google/src/query_result.cpp
-        google/src/query_result.h
-        google/src/stopword.cpp
-        google/src/stopword.h
-        google/src/tokenizer.cpp
-        google/src/tokenizer.h
+        textFiles/file1.txt
+        textFiles/file2.txt
+        textFiles/file3.txt
+        textFiles/index.txt
+        "textFiles/printing out weights.txt"
+        textFiles/README.md
+        textFiles/Readmeass1.txt
+        textFiles/stop.txt
+        textFiles/stopwords.txt
         document.cpp
         Document.h
-        file1.txt
-        file2.txt
-        file3.txt
-        index.txt
+        google.cpp
         indexer.cpp
         indexer.h
-        "printing out weights.txt"
         query_result.cpp
         query_result.h
-        README.md
-        Readmeass1.txt
-        stop.txt
         stopword.cpp
         stopword.h
-        stopwords.txt
         Tokenizer.cpp
-        Tokenizer.h)
+        Tokenizer.h summarizer.cpp index_item.cpp index_item.h sentence.cpp sentence.h abstract_tokenizer.cpp abstract_tokenizer.h word_tokenizer.cpp word_tokenizer.h sentence_tokenizer.cpp sentence_tokenizer.h indexing.cpp document_indexer.cpp document_indexer.h sentence_indexer.cpp sentence_indexer.h)
 
 add_executable(COMP345 ${SOURCE_FILES})

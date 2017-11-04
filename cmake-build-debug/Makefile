@@ -149,6 +149,33 @@ Tokenizer.cpp.s:
 	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/Tokenizer.cpp.s
 .PHONY : Tokenizer.cpp.s
 
+abstract_tokenizer.obj: abstract_tokenizer.cpp.obj
+
+.PHONY : abstract_tokenizer.obj
+
+# target to build an object file
+abstract_tokenizer.cpp.obj:
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/abstract_tokenizer.cpp.obj
+.PHONY : abstract_tokenizer.cpp.obj
+
+abstract_tokenizer.i: abstract_tokenizer.cpp.i
+
+.PHONY : abstract_tokenizer.i
+
+# target to preprocess a source file
+abstract_tokenizer.cpp.i:
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/abstract_tokenizer.cpp.i
+.PHONY : abstract_tokenizer.cpp.i
+
+abstract_tokenizer.s: abstract_tokenizer.cpp.s
+
+.PHONY : abstract_tokenizer.s
+
+# target to generate assembly for a file
+abstract_tokenizer.cpp.s:
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/abstract_tokenizer.cpp.s
+.PHONY : abstract_tokenizer.cpp.s
+
 document.obj: document.cpp.obj
 
 .PHONY : document.obj
@@ -176,167 +203,86 @@ document.cpp.s:
 	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/document.cpp.s
 .PHONY : document.cpp.s
 
-google/src/document.obj: google/src/document.cpp.obj
+document_indexer.obj: document_indexer.cpp.obj
 
-.PHONY : google/src/document.obj
-
-# target to build an object file
-google/src/document.cpp.obj:
-	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/google/src/document.cpp.obj
-.PHONY : google/src/document.cpp.obj
-
-google/src/document.i: google/src/document.cpp.i
-
-.PHONY : google/src/document.i
-
-# target to preprocess a source file
-google/src/document.cpp.i:
-	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/google/src/document.cpp.i
-.PHONY : google/src/document.cpp.i
-
-google/src/document.s: google/src/document.cpp.s
-
-.PHONY : google/src/document.s
-
-# target to generate assembly for a file
-google/src/document.cpp.s:
-	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/google/src/document.cpp.s
-.PHONY : google/src/document.cpp.s
-
-google/src/google.obj: google/src/google.cpp.obj
-
-.PHONY : google/src/google.obj
+.PHONY : document_indexer.obj
 
 # target to build an object file
-google/src/google.cpp.obj:
-	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/google/src/google.cpp.obj
-.PHONY : google/src/google.cpp.obj
+document_indexer.cpp.obj:
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/document_indexer.cpp.obj
+.PHONY : document_indexer.cpp.obj
 
-google/src/google.i: google/src/google.cpp.i
+document_indexer.i: document_indexer.cpp.i
 
-.PHONY : google/src/google.i
+.PHONY : document_indexer.i
 
 # target to preprocess a source file
-google/src/google.cpp.i:
-	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/google/src/google.cpp.i
-.PHONY : google/src/google.cpp.i
+document_indexer.cpp.i:
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/document_indexer.cpp.i
+.PHONY : document_indexer.cpp.i
 
-google/src/google.s: google/src/google.cpp.s
+document_indexer.s: document_indexer.cpp.s
 
-.PHONY : google/src/google.s
+.PHONY : document_indexer.s
 
 # target to generate assembly for a file
-google/src/google.cpp.s:
-	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/google/src/google.cpp.s
-.PHONY : google/src/google.cpp.s
+document_indexer.cpp.s:
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/document_indexer.cpp.s
+.PHONY : document_indexer.cpp.s
 
-google/src/indexer.obj: google/src/indexer.cpp.obj
+google.obj: google.cpp.obj
 
-.PHONY : google/src/indexer.obj
+.PHONY : google.obj
 
 # target to build an object file
-google/src/indexer.cpp.obj:
-	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/google/src/indexer.cpp.obj
-.PHONY : google/src/indexer.cpp.obj
+google.cpp.obj:
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/google.cpp.obj
+.PHONY : google.cpp.obj
 
-google/src/indexer.i: google/src/indexer.cpp.i
+google.i: google.cpp.i
 
-.PHONY : google/src/indexer.i
+.PHONY : google.i
 
 # target to preprocess a source file
-google/src/indexer.cpp.i:
-	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/google/src/indexer.cpp.i
-.PHONY : google/src/indexer.cpp.i
+google.cpp.i:
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/google.cpp.i
+.PHONY : google.cpp.i
 
-google/src/indexer.s: google/src/indexer.cpp.s
+google.s: google.cpp.s
 
-.PHONY : google/src/indexer.s
+.PHONY : google.s
 
 # target to generate assembly for a file
-google/src/indexer.cpp.s:
-	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/google/src/indexer.cpp.s
-.PHONY : google/src/indexer.cpp.s
+google.cpp.s:
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/google.cpp.s
+.PHONY : google.cpp.s
 
-google/src/query_result.obj: google/src/query_result.cpp.obj
+index_item.obj: index_item.cpp.obj
 
-.PHONY : google/src/query_result.obj
+.PHONY : index_item.obj
 
 # target to build an object file
-google/src/query_result.cpp.obj:
-	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/google/src/query_result.cpp.obj
-.PHONY : google/src/query_result.cpp.obj
+index_item.cpp.obj:
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/index_item.cpp.obj
+.PHONY : index_item.cpp.obj
 
-google/src/query_result.i: google/src/query_result.cpp.i
+index_item.i: index_item.cpp.i
 
-.PHONY : google/src/query_result.i
-
-# target to preprocess a source file
-google/src/query_result.cpp.i:
-	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/google/src/query_result.cpp.i
-.PHONY : google/src/query_result.cpp.i
-
-google/src/query_result.s: google/src/query_result.cpp.s
-
-.PHONY : google/src/query_result.s
-
-# target to generate assembly for a file
-google/src/query_result.cpp.s:
-	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/google/src/query_result.cpp.s
-.PHONY : google/src/query_result.cpp.s
-
-google/src/stopword.obj: google/src/stopword.cpp.obj
-
-.PHONY : google/src/stopword.obj
-
-# target to build an object file
-google/src/stopword.cpp.obj:
-	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/google/src/stopword.cpp.obj
-.PHONY : google/src/stopword.cpp.obj
-
-google/src/stopword.i: google/src/stopword.cpp.i
-
-.PHONY : google/src/stopword.i
+.PHONY : index_item.i
 
 # target to preprocess a source file
-google/src/stopword.cpp.i:
-	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/google/src/stopword.cpp.i
-.PHONY : google/src/stopword.cpp.i
+index_item.cpp.i:
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/index_item.cpp.i
+.PHONY : index_item.cpp.i
 
-google/src/stopword.s: google/src/stopword.cpp.s
+index_item.s: index_item.cpp.s
 
-.PHONY : google/src/stopword.s
-
-# target to generate assembly for a file
-google/src/stopword.cpp.s:
-	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/google/src/stopword.cpp.s
-.PHONY : google/src/stopword.cpp.s
-
-google/src/tokenizer.obj: google/src/tokenizer.cpp.obj
-
-.PHONY : google/src/tokenizer.obj
-
-# target to build an object file
-google/src/tokenizer.cpp.obj:
-	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/google/src/tokenizer.cpp.obj
-.PHONY : google/src/tokenizer.cpp.obj
-
-google/src/tokenizer.i: google/src/tokenizer.cpp.i
-
-.PHONY : google/src/tokenizer.i
-
-# target to preprocess a source file
-google/src/tokenizer.cpp.i:
-	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/google/src/tokenizer.cpp.i
-.PHONY : google/src/tokenizer.cpp.i
-
-google/src/tokenizer.s: google/src/tokenizer.cpp.s
-
-.PHONY : google/src/tokenizer.s
+.PHONY : index_item.s
 
 # target to generate assembly for a file
-google/src/tokenizer.cpp.s:
-	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/google/src/tokenizer.cpp.s
-.PHONY : google/src/tokenizer.cpp.s
+index_item.cpp.s:
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/index_item.cpp.s
+.PHONY : index_item.cpp.s
 
 indexer.obj: indexer.cpp.obj
 
@@ -365,6 +311,33 @@ indexer.cpp.s:
 	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/indexer.cpp.s
 .PHONY : indexer.cpp.s
 
+indexing.obj: indexing.cpp.obj
+
+.PHONY : indexing.obj
+
+# target to build an object file
+indexing.cpp.obj:
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/indexing.cpp.obj
+.PHONY : indexing.cpp.obj
+
+indexing.i: indexing.cpp.i
+
+.PHONY : indexing.i
+
+# target to preprocess a source file
+indexing.cpp.i:
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/indexing.cpp.i
+.PHONY : indexing.cpp.i
+
+indexing.s: indexing.cpp.s
+
+.PHONY : indexing.s
+
+# target to generate assembly for a file
+indexing.cpp.s:
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/indexing.cpp.s
+.PHONY : indexing.cpp.s
+
 query_result.obj: query_result.cpp.obj
 
 .PHONY : query_result.obj
@@ -391,6 +364,87 @@ query_result.s: query_result.cpp.s
 query_result.cpp.s:
 	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/query_result.cpp.s
 .PHONY : query_result.cpp.s
+
+sentence.obj: sentence.cpp.obj
+
+.PHONY : sentence.obj
+
+# target to build an object file
+sentence.cpp.obj:
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/sentence.cpp.obj
+.PHONY : sentence.cpp.obj
+
+sentence.i: sentence.cpp.i
+
+.PHONY : sentence.i
+
+# target to preprocess a source file
+sentence.cpp.i:
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/sentence.cpp.i
+.PHONY : sentence.cpp.i
+
+sentence.s: sentence.cpp.s
+
+.PHONY : sentence.s
+
+# target to generate assembly for a file
+sentence.cpp.s:
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/sentence.cpp.s
+.PHONY : sentence.cpp.s
+
+sentence_indexer.obj: sentence_indexer.cpp.obj
+
+.PHONY : sentence_indexer.obj
+
+# target to build an object file
+sentence_indexer.cpp.obj:
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/sentence_indexer.cpp.obj
+.PHONY : sentence_indexer.cpp.obj
+
+sentence_indexer.i: sentence_indexer.cpp.i
+
+.PHONY : sentence_indexer.i
+
+# target to preprocess a source file
+sentence_indexer.cpp.i:
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/sentence_indexer.cpp.i
+.PHONY : sentence_indexer.cpp.i
+
+sentence_indexer.s: sentence_indexer.cpp.s
+
+.PHONY : sentence_indexer.s
+
+# target to generate assembly for a file
+sentence_indexer.cpp.s:
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/sentence_indexer.cpp.s
+.PHONY : sentence_indexer.cpp.s
+
+sentence_tokenizer.obj: sentence_tokenizer.cpp.obj
+
+.PHONY : sentence_tokenizer.obj
+
+# target to build an object file
+sentence_tokenizer.cpp.obj:
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/sentence_tokenizer.cpp.obj
+.PHONY : sentence_tokenizer.cpp.obj
+
+sentence_tokenizer.i: sentence_tokenizer.cpp.i
+
+.PHONY : sentence_tokenizer.i
+
+# target to preprocess a source file
+sentence_tokenizer.cpp.i:
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/sentence_tokenizer.cpp.i
+.PHONY : sentence_tokenizer.cpp.i
+
+sentence_tokenizer.s: sentence_tokenizer.cpp.s
+
+.PHONY : sentence_tokenizer.s
+
+# target to generate assembly for a file
+sentence_tokenizer.cpp.s:
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/sentence_tokenizer.cpp.s
+.PHONY : sentence_tokenizer.cpp.s
 
 stopword.obj: stopword.cpp.obj
 
@@ -419,6 +473,60 @@ stopword.cpp.s:
 	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/stopword.cpp.s
 .PHONY : stopword.cpp.s
 
+summarizer.obj: summarizer.cpp.obj
+
+.PHONY : summarizer.obj
+
+# target to build an object file
+summarizer.cpp.obj:
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/summarizer.cpp.obj
+.PHONY : summarizer.cpp.obj
+
+summarizer.i: summarizer.cpp.i
+
+.PHONY : summarizer.i
+
+# target to preprocess a source file
+summarizer.cpp.i:
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/summarizer.cpp.i
+.PHONY : summarizer.cpp.i
+
+summarizer.s: summarizer.cpp.s
+
+.PHONY : summarizer.s
+
+# target to generate assembly for a file
+summarizer.cpp.s:
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/summarizer.cpp.s
+.PHONY : summarizer.cpp.s
+
+word_tokenizer.obj: word_tokenizer.cpp.obj
+
+.PHONY : word_tokenizer.obj
+
+# target to build an object file
+word_tokenizer.cpp.obj:
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/word_tokenizer.cpp.obj
+.PHONY : word_tokenizer.cpp.obj
+
+word_tokenizer.i: word_tokenizer.cpp.i
+
+.PHONY : word_tokenizer.i
+
+# target to preprocess a source file
+word_tokenizer.cpp.i:
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/word_tokenizer.cpp.i
+.PHONY : word_tokenizer.cpp.i
+
+word_tokenizer.s: word_tokenizer.cpp.s
+
+.PHONY : word_tokenizer.s
+
+# target to generate assembly for a file
+word_tokenizer.cpp.s:
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/word_tokenizer.cpp.s
+.PHONY : word_tokenizer.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -431,36 +539,48 @@ help:
 	@echo ... Tokenizer.obj
 	@echo ... Tokenizer.i
 	@echo ... Tokenizer.s
+	@echo ... abstract_tokenizer.obj
+	@echo ... abstract_tokenizer.i
+	@echo ... abstract_tokenizer.s
 	@echo ... document.obj
 	@echo ... document.i
 	@echo ... document.s
-	@echo ... google/src/document.obj
-	@echo ... google/src/document.i
-	@echo ... google/src/document.s
-	@echo ... google/src/google.obj
-	@echo ... google/src/google.i
-	@echo ... google/src/google.s
-	@echo ... google/src/indexer.obj
-	@echo ... google/src/indexer.i
-	@echo ... google/src/indexer.s
-	@echo ... google/src/query_result.obj
-	@echo ... google/src/query_result.i
-	@echo ... google/src/query_result.s
-	@echo ... google/src/stopword.obj
-	@echo ... google/src/stopword.i
-	@echo ... google/src/stopword.s
-	@echo ... google/src/tokenizer.obj
-	@echo ... google/src/tokenizer.i
-	@echo ... google/src/tokenizer.s
+	@echo ... document_indexer.obj
+	@echo ... document_indexer.i
+	@echo ... document_indexer.s
+	@echo ... google.obj
+	@echo ... google.i
+	@echo ... google.s
+	@echo ... index_item.obj
+	@echo ... index_item.i
+	@echo ... index_item.s
 	@echo ... indexer.obj
 	@echo ... indexer.i
 	@echo ... indexer.s
+	@echo ... indexing.obj
+	@echo ... indexing.i
+	@echo ... indexing.s
 	@echo ... query_result.obj
 	@echo ... query_result.i
 	@echo ... query_result.s
+	@echo ... sentence.obj
+	@echo ... sentence.i
+	@echo ... sentence.s
+	@echo ... sentence_indexer.obj
+	@echo ... sentence_indexer.i
+	@echo ... sentence_indexer.s
+	@echo ... sentence_tokenizer.obj
+	@echo ... sentence_tokenizer.i
+	@echo ... sentence_tokenizer.s
 	@echo ... stopword.obj
 	@echo ... stopword.i
 	@echo ... stopword.s
+	@echo ... summarizer.obj
+	@echo ... summarizer.i
+	@echo ... summarizer.s
+	@echo ... word_tokenizer.obj
+	@echo ... word_tokenizer.i
+	@echo ... word_tokenizer.s
 .PHONY : help
 
 

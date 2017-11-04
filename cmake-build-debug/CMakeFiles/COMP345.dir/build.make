@@ -56,153 +56,9 @@ include CMakeFiles/COMP345.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/COMP345.dir/flags.make
 
-CMakeFiles/COMP345.dir/google/src/document.cpp.obj: CMakeFiles/COMP345.dir/flags.make
-CMakeFiles/COMP345.dir/google/src/document.cpp.obj: ../google/src/document.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Sai Shan\Desktop\COMP345\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/COMP345.dir/google/src/document.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\COMP345.dir\google\src\document.cpp.obj -c "C:\Users\Sai Shan\Desktop\COMP345\google\src\document.cpp"
-
-CMakeFiles/COMP345.dir/google/src/document.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/COMP345.dir/google/src/document.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Sai Shan\Desktop\COMP345\google\src\document.cpp" > CMakeFiles\COMP345.dir\google\src\document.cpp.i
-
-CMakeFiles/COMP345.dir/google/src/document.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/COMP345.dir/google/src/document.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Sai Shan\Desktop\COMP345\google\src\document.cpp" -o CMakeFiles\COMP345.dir\google\src\document.cpp.s
-
-CMakeFiles/COMP345.dir/google/src/document.cpp.obj.requires:
-
-.PHONY : CMakeFiles/COMP345.dir/google/src/document.cpp.obj.requires
-
-CMakeFiles/COMP345.dir/google/src/document.cpp.obj.provides: CMakeFiles/COMP345.dir/google/src/document.cpp.obj.requires
-	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/google/src/document.cpp.obj.provides.build
-.PHONY : CMakeFiles/COMP345.dir/google/src/document.cpp.obj.provides
-
-CMakeFiles/COMP345.dir/google/src/document.cpp.obj.provides.build: CMakeFiles/COMP345.dir/google/src/document.cpp.obj
-
-
-CMakeFiles/COMP345.dir/google/src/google.cpp.obj: CMakeFiles/COMP345.dir/flags.make
-CMakeFiles/COMP345.dir/google/src/google.cpp.obj: ../google/src/google.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Sai Shan\Desktop\COMP345\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/COMP345.dir/google/src/google.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\COMP345.dir\google\src\google.cpp.obj -c "C:\Users\Sai Shan\Desktop\COMP345\google\src\google.cpp"
-
-CMakeFiles/COMP345.dir/google/src/google.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/COMP345.dir/google/src/google.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Sai Shan\Desktop\COMP345\google\src\google.cpp" > CMakeFiles\COMP345.dir\google\src\google.cpp.i
-
-CMakeFiles/COMP345.dir/google/src/google.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/COMP345.dir/google/src/google.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Sai Shan\Desktop\COMP345\google\src\google.cpp" -o CMakeFiles\COMP345.dir\google\src\google.cpp.s
-
-CMakeFiles/COMP345.dir/google/src/google.cpp.obj.requires:
-
-.PHONY : CMakeFiles/COMP345.dir/google/src/google.cpp.obj.requires
-
-CMakeFiles/COMP345.dir/google/src/google.cpp.obj.provides: CMakeFiles/COMP345.dir/google/src/google.cpp.obj.requires
-	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/google/src/google.cpp.obj.provides.build
-.PHONY : CMakeFiles/COMP345.dir/google/src/google.cpp.obj.provides
-
-CMakeFiles/COMP345.dir/google/src/google.cpp.obj.provides.build: CMakeFiles/COMP345.dir/google/src/google.cpp.obj
-
-
-CMakeFiles/COMP345.dir/google/src/indexer.cpp.obj: CMakeFiles/COMP345.dir/flags.make
-CMakeFiles/COMP345.dir/google/src/indexer.cpp.obj: ../google/src/indexer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Sai Shan\Desktop\COMP345\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/COMP345.dir/google/src/indexer.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\COMP345.dir\google\src\indexer.cpp.obj -c "C:\Users\Sai Shan\Desktop\COMP345\google\src\indexer.cpp"
-
-CMakeFiles/COMP345.dir/google/src/indexer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/COMP345.dir/google/src/indexer.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Sai Shan\Desktop\COMP345\google\src\indexer.cpp" > CMakeFiles\COMP345.dir\google\src\indexer.cpp.i
-
-CMakeFiles/COMP345.dir/google/src/indexer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/COMP345.dir/google/src/indexer.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Sai Shan\Desktop\COMP345\google\src\indexer.cpp" -o CMakeFiles\COMP345.dir\google\src\indexer.cpp.s
-
-CMakeFiles/COMP345.dir/google/src/indexer.cpp.obj.requires:
-
-.PHONY : CMakeFiles/COMP345.dir/google/src/indexer.cpp.obj.requires
-
-CMakeFiles/COMP345.dir/google/src/indexer.cpp.obj.provides: CMakeFiles/COMP345.dir/google/src/indexer.cpp.obj.requires
-	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/google/src/indexer.cpp.obj.provides.build
-.PHONY : CMakeFiles/COMP345.dir/google/src/indexer.cpp.obj.provides
-
-CMakeFiles/COMP345.dir/google/src/indexer.cpp.obj.provides.build: CMakeFiles/COMP345.dir/google/src/indexer.cpp.obj
-
-
-CMakeFiles/COMP345.dir/google/src/query_result.cpp.obj: CMakeFiles/COMP345.dir/flags.make
-CMakeFiles/COMP345.dir/google/src/query_result.cpp.obj: ../google/src/query_result.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Sai Shan\Desktop\COMP345\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/COMP345.dir/google/src/query_result.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\COMP345.dir\google\src\query_result.cpp.obj -c "C:\Users\Sai Shan\Desktop\COMP345\google\src\query_result.cpp"
-
-CMakeFiles/COMP345.dir/google/src/query_result.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/COMP345.dir/google/src/query_result.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Sai Shan\Desktop\COMP345\google\src\query_result.cpp" > CMakeFiles\COMP345.dir\google\src\query_result.cpp.i
-
-CMakeFiles/COMP345.dir/google/src/query_result.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/COMP345.dir/google/src/query_result.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Sai Shan\Desktop\COMP345\google\src\query_result.cpp" -o CMakeFiles\COMP345.dir\google\src\query_result.cpp.s
-
-CMakeFiles/COMP345.dir/google/src/query_result.cpp.obj.requires:
-
-.PHONY : CMakeFiles/COMP345.dir/google/src/query_result.cpp.obj.requires
-
-CMakeFiles/COMP345.dir/google/src/query_result.cpp.obj.provides: CMakeFiles/COMP345.dir/google/src/query_result.cpp.obj.requires
-	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/google/src/query_result.cpp.obj.provides.build
-.PHONY : CMakeFiles/COMP345.dir/google/src/query_result.cpp.obj.provides
-
-CMakeFiles/COMP345.dir/google/src/query_result.cpp.obj.provides.build: CMakeFiles/COMP345.dir/google/src/query_result.cpp.obj
-
-
-CMakeFiles/COMP345.dir/google/src/stopword.cpp.obj: CMakeFiles/COMP345.dir/flags.make
-CMakeFiles/COMP345.dir/google/src/stopword.cpp.obj: ../google/src/stopword.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Sai Shan\Desktop\COMP345\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/COMP345.dir/google/src/stopword.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\COMP345.dir\google\src\stopword.cpp.obj -c "C:\Users\Sai Shan\Desktop\COMP345\google\src\stopword.cpp"
-
-CMakeFiles/COMP345.dir/google/src/stopword.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/COMP345.dir/google/src/stopword.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Sai Shan\Desktop\COMP345\google\src\stopword.cpp" > CMakeFiles\COMP345.dir\google\src\stopword.cpp.i
-
-CMakeFiles/COMP345.dir/google/src/stopword.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/COMP345.dir/google/src/stopword.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Sai Shan\Desktop\COMP345\google\src\stopword.cpp" -o CMakeFiles\COMP345.dir\google\src\stopword.cpp.s
-
-CMakeFiles/COMP345.dir/google/src/stopword.cpp.obj.requires:
-
-.PHONY : CMakeFiles/COMP345.dir/google/src/stopword.cpp.obj.requires
-
-CMakeFiles/COMP345.dir/google/src/stopword.cpp.obj.provides: CMakeFiles/COMP345.dir/google/src/stopword.cpp.obj.requires
-	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/google/src/stopword.cpp.obj.provides.build
-.PHONY : CMakeFiles/COMP345.dir/google/src/stopword.cpp.obj.provides
-
-CMakeFiles/COMP345.dir/google/src/stopword.cpp.obj.provides.build: CMakeFiles/COMP345.dir/google/src/stopword.cpp.obj
-
-
-CMakeFiles/COMP345.dir/google/src/tokenizer.cpp.obj: CMakeFiles/COMP345.dir/flags.make
-CMakeFiles/COMP345.dir/google/src/tokenizer.cpp.obj: ../google/src/tokenizer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Sai Shan\Desktop\COMP345\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/COMP345.dir/google/src/tokenizer.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\COMP345.dir\google\src\tokenizer.cpp.obj -c "C:\Users\Sai Shan\Desktop\COMP345\google\src\tokenizer.cpp"
-
-CMakeFiles/COMP345.dir/google/src/tokenizer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/COMP345.dir/google/src/tokenizer.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Sai Shan\Desktop\COMP345\google\src\tokenizer.cpp" > CMakeFiles\COMP345.dir\google\src\tokenizer.cpp.i
-
-CMakeFiles/COMP345.dir/google/src/tokenizer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/COMP345.dir/google/src/tokenizer.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Sai Shan\Desktop\COMP345\google\src\tokenizer.cpp" -o CMakeFiles\COMP345.dir\google\src\tokenizer.cpp.s
-
-CMakeFiles/COMP345.dir/google/src/tokenizer.cpp.obj.requires:
-
-.PHONY : CMakeFiles/COMP345.dir/google/src/tokenizer.cpp.obj.requires
-
-CMakeFiles/COMP345.dir/google/src/tokenizer.cpp.obj.provides: CMakeFiles/COMP345.dir/google/src/tokenizer.cpp.obj.requires
-	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/google/src/tokenizer.cpp.obj.provides.build
-.PHONY : CMakeFiles/COMP345.dir/google/src/tokenizer.cpp.obj.provides
-
-CMakeFiles/COMP345.dir/google/src/tokenizer.cpp.obj.provides.build: CMakeFiles/COMP345.dir/google/src/tokenizer.cpp.obj
-
-
 CMakeFiles/COMP345.dir/document.cpp.obj: CMakeFiles/COMP345.dir/flags.make
 CMakeFiles/COMP345.dir/document.cpp.obj: ../document.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Sai Shan\Desktop\COMP345\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/COMP345.dir/document.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Sai Shan\Desktop\COMP345\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/COMP345.dir/document.cpp.obj"
 	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\COMP345.dir\document.cpp.obj -c "C:\Users\Sai Shan\Desktop\COMP345\document.cpp"
 
 CMakeFiles/COMP345.dir/document.cpp.i: cmake_force
@@ -224,9 +80,33 @@ CMakeFiles/COMP345.dir/document.cpp.obj.provides: CMakeFiles/COMP345.dir/documen
 CMakeFiles/COMP345.dir/document.cpp.obj.provides.build: CMakeFiles/COMP345.dir/document.cpp.obj
 
 
+CMakeFiles/COMP345.dir/google.cpp.obj: CMakeFiles/COMP345.dir/flags.make
+CMakeFiles/COMP345.dir/google.cpp.obj: ../google.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Sai Shan\Desktop\COMP345\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/COMP345.dir/google.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\COMP345.dir\google.cpp.obj -c "C:\Users\Sai Shan\Desktop\COMP345\google.cpp"
+
+CMakeFiles/COMP345.dir/google.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/COMP345.dir/google.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Sai Shan\Desktop\COMP345\google.cpp" > CMakeFiles\COMP345.dir\google.cpp.i
+
+CMakeFiles/COMP345.dir/google.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/COMP345.dir/google.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Sai Shan\Desktop\COMP345\google.cpp" -o CMakeFiles\COMP345.dir\google.cpp.s
+
+CMakeFiles/COMP345.dir/google.cpp.obj.requires:
+
+.PHONY : CMakeFiles/COMP345.dir/google.cpp.obj.requires
+
+CMakeFiles/COMP345.dir/google.cpp.obj.provides: CMakeFiles/COMP345.dir/google.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/google.cpp.obj.provides.build
+.PHONY : CMakeFiles/COMP345.dir/google.cpp.obj.provides
+
+CMakeFiles/COMP345.dir/google.cpp.obj.provides.build: CMakeFiles/COMP345.dir/google.cpp.obj
+
+
 CMakeFiles/COMP345.dir/indexer.cpp.obj: CMakeFiles/COMP345.dir/flags.make
 CMakeFiles/COMP345.dir/indexer.cpp.obj: ../indexer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Sai Shan\Desktop\COMP345\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/COMP345.dir/indexer.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Sai Shan\Desktop\COMP345\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/COMP345.dir/indexer.cpp.obj"
 	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\COMP345.dir\indexer.cpp.obj -c "C:\Users\Sai Shan\Desktop\COMP345\indexer.cpp"
 
 CMakeFiles/COMP345.dir/indexer.cpp.i: cmake_force
@@ -250,7 +130,7 @@ CMakeFiles/COMP345.dir/indexer.cpp.obj.provides.build: CMakeFiles/COMP345.dir/in
 
 CMakeFiles/COMP345.dir/query_result.cpp.obj: CMakeFiles/COMP345.dir/flags.make
 CMakeFiles/COMP345.dir/query_result.cpp.obj: ../query_result.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Sai Shan\Desktop\COMP345\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/COMP345.dir/query_result.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Sai Shan\Desktop\COMP345\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/COMP345.dir/query_result.cpp.obj"
 	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\COMP345.dir\query_result.cpp.obj -c "C:\Users\Sai Shan\Desktop\COMP345\query_result.cpp"
 
 CMakeFiles/COMP345.dir/query_result.cpp.i: cmake_force
@@ -274,7 +154,7 @@ CMakeFiles/COMP345.dir/query_result.cpp.obj.provides.build: CMakeFiles/COMP345.d
 
 CMakeFiles/COMP345.dir/stopword.cpp.obj: CMakeFiles/COMP345.dir/flags.make
 CMakeFiles/COMP345.dir/stopword.cpp.obj: ../stopword.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Sai Shan\Desktop\COMP345\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/COMP345.dir/stopword.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Sai Shan\Desktop\COMP345\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/COMP345.dir/stopword.cpp.obj"
 	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\COMP345.dir\stopword.cpp.obj -c "C:\Users\Sai Shan\Desktop\COMP345\stopword.cpp"
 
 CMakeFiles/COMP345.dir/stopword.cpp.i: cmake_force
@@ -298,7 +178,7 @@ CMakeFiles/COMP345.dir/stopword.cpp.obj.provides.build: CMakeFiles/COMP345.dir/s
 
 CMakeFiles/COMP345.dir/Tokenizer.cpp.obj: CMakeFiles/COMP345.dir/flags.make
 CMakeFiles/COMP345.dir/Tokenizer.cpp.obj: ../Tokenizer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Sai Shan\Desktop\COMP345\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/COMP345.dir/Tokenizer.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Sai Shan\Desktop\COMP345\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/COMP345.dir/Tokenizer.cpp.obj"
 	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\COMP345.dir\Tokenizer.cpp.obj -c "C:\Users\Sai Shan\Desktop\COMP345\Tokenizer.cpp"
 
 CMakeFiles/COMP345.dir/Tokenizer.cpp.i: cmake_force
@@ -320,39 +200,263 @@ CMakeFiles/COMP345.dir/Tokenizer.cpp.obj.provides: CMakeFiles/COMP345.dir/Tokeni
 CMakeFiles/COMP345.dir/Tokenizer.cpp.obj.provides.build: CMakeFiles/COMP345.dir/Tokenizer.cpp.obj
 
 
+CMakeFiles/COMP345.dir/summarizer.cpp.obj: CMakeFiles/COMP345.dir/flags.make
+CMakeFiles/COMP345.dir/summarizer.cpp.obj: ../summarizer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Sai Shan\Desktop\COMP345\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/COMP345.dir/summarizer.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\COMP345.dir\summarizer.cpp.obj -c "C:\Users\Sai Shan\Desktop\COMP345\summarizer.cpp"
+
+CMakeFiles/COMP345.dir/summarizer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/COMP345.dir/summarizer.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Sai Shan\Desktop\COMP345\summarizer.cpp" > CMakeFiles\COMP345.dir\summarizer.cpp.i
+
+CMakeFiles/COMP345.dir/summarizer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/COMP345.dir/summarizer.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Sai Shan\Desktop\COMP345\summarizer.cpp" -o CMakeFiles\COMP345.dir\summarizer.cpp.s
+
+CMakeFiles/COMP345.dir/summarizer.cpp.obj.requires:
+
+.PHONY : CMakeFiles/COMP345.dir/summarizer.cpp.obj.requires
+
+CMakeFiles/COMP345.dir/summarizer.cpp.obj.provides: CMakeFiles/COMP345.dir/summarizer.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/summarizer.cpp.obj.provides.build
+.PHONY : CMakeFiles/COMP345.dir/summarizer.cpp.obj.provides
+
+CMakeFiles/COMP345.dir/summarizer.cpp.obj.provides.build: CMakeFiles/COMP345.dir/summarizer.cpp.obj
+
+
+CMakeFiles/COMP345.dir/index_item.cpp.obj: CMakeFiles/COMP345.dir/flags.make
+CMakeFiles/COMP345.dir/index_item.cpp.obj: ../index_item.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Sai Shan\Desktop\COMP345\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/COMP345.dir/index_item.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\COMP345.dir\index_item.cpp.obj -c "C:\Users\Sai Shan\Desktop\COMP345\index_item.cpp"
+
+CMakeFiles/COMP345.dir/index_item.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/COMP345.dir/index_item.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Sai Shan\Desktop\COMP345\index_item.cpp" > CMakeFiles\COMP345.dir\index_item.cpp.i
+
+CMakeFiles/COMP345.dir/index_item.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/COMP345.dir/index_item.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Sai Shan\Desktop\COMP345\index_item.cpp" -o CMakeFiles\COMP345.dir\index_item.cpp.s
+
+CMakeFiles/COMP345.dir/index_item.cpp.obj.requires:
+
+.PHONY : CMakeFiles/COMP345.dir/index_item.cpp.obj.requires
+
+CMakeFiles/COMP345.dir/index_item.cpp.obj.provides: CMakeFiles/COMP345.dir/index_item.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/index_item.cpp.obj.provides.build
+.PHONY : CMakeFiles/COMP345.dir/index_item.cpp.obj.provides
+
+CMakeFiles/COMP345.dir/index_item.cpp.obj.provides.build: CMakeFiles/COMP345.dir/index_item.cpp.obj
+
+
+CMakeFiles/COMP345.dir/sentence.cpp.obj: CMakeFiles/COMP345.dir/flags.make
+CMakeFiles/COMP345.dir/sentence.cpp.obj: ../sentence.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Sai Shan\Desktop\COMP345\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/COMP345.dir/sentence.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\COMP345.dir\sentence.cpp.obj -c "C:\Users\Sai Shan\Desktop\COMP345\sentence.cpp"
+
+CMakeFiles/COMP345.dir/sentence.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/COMP345.dir/sentence.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Sai Shan\Desktop\COMP345\sentence.cpp" > CMakeFiles\COMP345.dir\sentence.cpp.i
+
+CMakeFiles/COMP345.dir/sentence.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/COMP345.dir/sentence.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Sai Shan\Desktop\COMP345\sentence.cpp" -o CMakeFiles\COMP345.dir\sentence.cpp.s
+
+CMakeFiles/COMP345.dir/sentence.cpp.obj.requires:
+
+.PHONY : CMakeFiles/COMP345.dir/sentence.cpp.obj.requires
+
+CMakeFiles/COMP345.dir/sentence.cpp.obj.provides: CMakeFiles/COMP345.dir/sentence.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/sentence.cpp.obj.provides.build
+.PHONY : CMakeFiles/COMP345.dir/sentence.cpp.obj.provides
+
+CMakeFiles/COMP345.dir/sentence.cpp.obj.provides.build: CMakeFiles/COMP345.dir/sentence.cpp.obj
+
+
+CMakeFiles/COMP345.dir/abstract_tokenizer.cpp.obj: CMakeFiles/COMP345.dir/flags.make
+CMakeFiles/COMP345.dir/abstract_tokenizer.cpp.obj: ../abstract_tokenizer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Sai Shan\Desktop\COMP345\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/COMP345.dir/abstract_tokenizer.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\COMP345.dir\abstract_tokenizer.cpp.obj -c "C:\Users\Sai Shan\Desktop\COMP345\abstract_tokenizer.cpp"
+
+CMakeFiles/COMP345.dir/abstract_tokenizer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/COMP345.dir/abstract_tokenizer.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Sai Shan\Desktop\COMP345\abstract_tokenizer.cpp" > CMakeFiles\COMP345.dir\abstract_tokenizer.cpp.i
+
+CMakeFiles/COMP345.dir/abstract_tokenizer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/COMP345.dir/abstract_tokenizer.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Sai Shan\Desktop\COMP345\abstract_tokenizer.cpp" -o CMakeFiles\COMP345.dir\abstract_tokenizer.cpp.s
+
+CMakeFiles/COMP345.dir/abstract_tokenizer.cpp.obj.requires:
+
+.PHONY : CMakeFiles/COMP345.dir/abstract_tokenizer.cpp.obj.requires
+
+CMakeFiles/COMP345.dir/abstract_tokenizer.cpp.obj.provides: CMakeFiles/COMP345.dir/abstract_tokenizer.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/abstract_tokenizer.cpp.obj.provides.build
+.PHONY : CMakeFiles/COMP345.dir/abstract_tokenizer.cpp.obj.provides
+
+CMakeFiles/COMP345.dir/abstract_tokenizer.cpp.obj.provides.build: CMakeFiles/COMP345.dir/abstract_tokenizer.cpp.obj
+
+
+CMakeFiles/COMP345.dir/word_tokenizer.cpp.obj: CMakeFiles/COMP345.dir/flags.make
+CMakeFiles/COMP345.dir/word_tokenizer.cpp.obj: ../word_tokenizer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Sai Shan\Desktop\COMP345\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/COMP345.dir/word_tokenizer.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\COMP345.dir\word_tokenizer.cpp.obj -c "C:\Users\Sai Shan\Desktop\COMP345\word_tokenizer.cpp"
+
+CMakeFiles/COMP345.dir/word_tokenizer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/COMP345.dir/word_tokenizer.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Sai Shan\Desktop\COMP345\word_tokenizer.cpp" > CMakeFiles\COMP345.dir\word_tokenizer.cpp.i
+
+CMakeFiles/COMP345.dir/word_tokenizer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/COMP345.dir/word_tokenizer.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Sai Shan\Desktop\COMP345\word_tokenizer.cpp" -o CMakeFiles\COMP345.dir\word_tokenizer.cpp.s
+
+CMakeFiles/COMP345.dir/word_tokenizer.cpp.obj.requires:
+
+.PHONY : CMakeFiles/COMP345.dir/word_tokenizer.cpp.obj.requires
+
+CMakeFiles/COMP345.dir/word_tokenizer.cpp.obj.provides: CMakeFiles/COMP345.dir/word_tokenizer.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/word_tokenizer.cpp.obj.provides.build
+.PHONY : CMakeFiles/COMP345.dir/word_tokenizer.cpp.obj.provides
+
+CMakeFiles/COMP345.dir/word_tokenizer.cpp.obj.provides.build: CMakeFiles/COMP345.dir/word_tokenizer.cpp.obj
+
+
+CMakeFiles/COMP345.dir/sentence_tokenizer.cpp.obj: CMakeFiles/COMP345.dir/flags.make
+CMakeFiles/COMP345.dir/sentence_tokenizer.cpp.obj: ../sentence_tokenizer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Sai Shan\Desktop\COMP345\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/COMP345.dir/sentence_tokenizer.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\COMP345.dir\sentence_tokenizer.cpp.obj -c "C:\Users\Sai Shan\Desktop\COMP345\sentence_tokenizer.cpp"
+
+CMakeFiles/COMP345.dir/sentence_tokenizer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/COMP345.dir/sentence_tokenizer.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Sai Shan\Desktop\COMP345\sentence_tokenizer.cpp" > CMakeFiles\COMP345.dir\sentence_tokenizer.cpp.i
+
+CMakeFiles/COMP345.dir/sentence_tokenizer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/COMP345.dir/sentence_tokenizer.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Sai Shan\Desktop\COMP345\sentence_tokenizer.cpp" -o CMakeFiles\COMP345.dir\sentence_tokenizer.cpp.s
+
+CMakeFiles/COMP345.dir/sentence_tokenizer.cpp.obj.requires:
+
+.PHONY : CMakeFiles/COMP345.dir/sentence_tokenizer.cpp.obj.requires
+
+CMakeFiles/COMP345.dir/sentence_tokenizer.cpp.obj.provides: CMakeFiles/COMP345.dir/sentence_tokenizer.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/sentence_tokenizer.cpp.obj.provides.build
+.PHONY : CMakeFiles/COMP345.dir/sentence_tokenizer.cpp.obj.provides
+
+CMakeFiles/COMP345.dir/sentence_tokenizer.cpp.obj.provides.build: CMakeFiles/COMP345.dir/sentence_tokenizer.cpp.obj
+
+
+CMakeFiles/COMP345.dir/indexing.cpp.obj: CMakeFiles/COMP345.dir/flags.make
+CMakeFiles/COMP345.dir/indexing.cpp.obj: ../indexing.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Sai Shan\Desktop\COMP345\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/COMP345.dir/indexing.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\COMP345.dir\indexing.cpp.obj -c "C:\Users\Sai Shan\Desktop\COMP345\indexing.cpp"
+
+CMakeFiles/COMP345.dir/indexing.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/COMP345.dir/indexing.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Sai Shan\Desktop\COMP345\indexing.cpp" > CMakeFiles\COMP345.dir\indexing.cpp.i
+
+CMakeFiles/COMP345.dir/indexing.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/COMP345.dir/indexing.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Sai Shan\Desktop\COMP345\indexing.cpp" -o CMakeFiles\COMP345.dir\indexing.cpp.s
+
+CMakeFiles/COMP345.dir/indexing.cpp.obj.requires:
+
+.PHONY : CMakeFiles/COMP345.dir/indexing.cpp.obj.requires
+
+CMakeFiles/COMP345.dir/indexing.cpp.obj.provides: CMakeFiles/COMP345.dir/indexing.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/indexing.cpp.obj.provides.build
+.PHONY : CMakeFiles/COMP345.dir/indexing.cpp.obj.provides
+
+CMakeFiles/COMP345.dir/indexing.cpp.obj.provides.build: CMakeFiles/COMP345.dir/indexing.cpp.obj
+
+
+CMakeFiles/COMP345.dir/document_indexer.cpp.obj: CMakeFiles/COMP345.dir/flags.make
+CMakeFiles/COMP345.dir/document_indexer.cpp.obj: ../document_indexer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Sai Shan\Desktop\COMP345\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/COMP345.dir/document_indexer.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\COMP345.dir\document_indexer.cpp.obj -c "C:\Users\Sai Shan\Desktop\COMP345\document_indexer.cpp"
+
+CMakeFiles/COMP345.dir/document_indexer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/COMP345.dir/document_indexer.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Sai Shan\Desktop\COMP345\document_indexer.cpp" > CMakeFiles\COMP345.dir\document_indexer.cpp.i
+
+CMakeFiles/COMP345.dir/document_indexer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/COMP345.dir/document_indexer.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Sai Shan\Desktop\COMP345\document_indexer.cpp" -o CMakeFiles\COMP345.dir\document_indexer.cpp.s
+
+CMakeFiles/COMP345.dir/document_indexer.cpp.obj.requires:
+
+.PHONY : CMakeFiles/COMP345.dir/document_indexer.cpp.obj.requires
+
+CMakeFiles/COMP345.dir/document_indexer.cpp.obj.provides: CMakeFiles/COMP345.dir/document_indexer.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/document_indexer.cpp.obj.provides.build
+.PHONY : CMakeFiles/COMP345.dir/document_indexer.cpp.obj.provides
+
+CMakeFiles/COMP345.dir/document_indexer.cpp.obj.provides.build: CMakeFiles/COMP345.dir/document_indexer.cpp.obj
+
+
+CMakeFiles/COMP345.dir/sentence_indexer.cpp.obj: CMakeFiles/COMP345.dir/flags.make
+CMakeFiles/COMP345.dir/sentence_indexer.cpp.obj: ../sentence_indexer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Sai Shan\Desktop\COMP345\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/COMP345.dir/sentence_indexer.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\COMP345.dir\sentence_indexer.cpp.obj -c "C:\Users\Sai Shan\Desktop\COMP345\sentence_indexer.cpp"
+
+CMakeFiles/COMP345.dir/sentence_indexer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/COMP345.dir/sentence_indexer.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Sai Shan\Desktop\COMP345\sentence_indexer.cpp" > CMakeFiles\COMP345.dir\sentence_indexer.cpp.i
+
+CMakeFiles/COMP345.dir/sentence_indexer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/COMP345.dir/sentence_indexer.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Sai Shan\Desktop\COMP345\sentence_indexer.cpp" -o CMakeFiles\COMP345.dir\sentence_indexer.cpp.s
+
+CMakeFiles/COMP345.dir/sentence_indexer.cpp.obj.requires:
+
+.PHONY : CMakeFiles/COMP345.dir/sentence_indexer.cpp.obj.requires
+
+CMakeFiles/COMP345.dir/sentence_indexer.cpp.obj.provides: CMakeFiles/COMP345.dir/sentence_indexer.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\COMP345.dir\build.make CMakeFiles/COMP345.dir/sentence_indexer.cpp.obj.provides.build
+.PHONY : CMakeFiles/COMP345.dir/sentence_indexer.cpp.obj.provides
+
+CMakeFiles/COMP345.dir/sentence_indexer.cpp.obj.provides.build: CMakeFiles/COMP345.dir/sentence_indexer.cpp.obj
+
+
 # Object files for target COMP345
 COMP345_OBJECTS = \
-"CMakeFiles/COMP345.dir/google/src/document.cpp.obj" \
-"CMakeFiles/COMP345.dir/google/src/google.cpp.obj" \
-"CMakeFiles/COMP345.dir/google/src/indexer.cpp.obj" \
-"CMakeFiles/COMP345.dir/google/src/query_result.cpp.obj" \
-"CMakeFiles/COMP345.dir/google/src/stopword.cpp.obj" \
-"CMakeFiles/COMP345.dir/google/src/tokenizer.cpp.obj" \
 "CMakeFiles/COMP345.dir/document.cpp.obj" \
+"CMakeFiles/COMP345.dir/google.cpp.obj" \
 "CMakeFiles/COMP345.dir/indexer.cpp.obj" \
 "CMakeFiles/COMP345.dir/query_result.cpp.obj" \
 "CMakeFiles/COMP345.dir/stopword.cpp.obj" \
-"CMakeFiles/COMP345.dir/Tokenizer.cpp.obj"
+"CMakeFiles/COMP345.dir/Tokenizer.cpp.obj" \
+"CMakeFiles/COMP345.dir/summarizer.cpp.obj" \
+"CMakeFiles/COMP345.dir/index_item.cpp.obj" \
+"CMakeFiles/COMP345.dir/sentence.cpp.obj" \
+"CMakeFiles/COMP345.dir/abstract_tokenizer.cpp.obj" \
+"CMakeFiles/COMP345.dir/word_tokenizer.cpp.obj" \
+"CMakeFiles/COMP345.dir/sentence_tokenizer.cpp.obj" \
+"CMakeFiles/COMP345.dir/indexing.cpp.obj" \
+"CMakeFiles/COMP345.dir/document_indexer.cpp.obj" \
+"CMakeFiles/COMP345.dir/sentence_indexer.cpp.obj"
 
 # External object files for target COMP345
 COMP345_EXTERNAL_OBJECTS =
 
-COMP345.exe: CMakeFiles/COMP345.dir/google/src/document.cpp.obj
-COMP345.exe: CMakeFiles/COMP345.dir/google/src/google.cpp.obj
-COMP345.exe: CMakeFiles/COMP345.dir/google/src/indexer.cpp.obj
-COMP345.exe: CMakeFiles/COMP345.dir/google/src/query_result.cpp.obj
-COMP345.exe: CMakeFiles/COMP345.dir/google/src/stopword.cpp.obj
-COMP345.exe: CMakeFiles/COMP345.dir/google/src/tokenizer.cpp.obj
 COMP345.exe: CMakeFiles/COMP345.dir/document.cpp.obj
+COMP345.exe: CMakeFiles/COMP345.dir/google.cpp.obj
 COMP345.exe: CMakeFiles/COMP345.dir/indexer.cpp.obj
 COMP345.exe: CMakeFiles/COMP345.dir/query_result.cpp.obj
 COMP345.exe: CMakeFiles/COMP345.dir/stopword.cpp.obj
 COMP345.exe: CMakeFiles/COMP345.dir/Tokenizer.cpp.obj
+COMP345.exe: CMakeFiles/COMP345.dir/summarizer.cpp.obj
+COMP345.exe: CMakeFiles/COMP345.dir/index_item.cpp.obj
+COMP345.exe: CMakeFiles/COMP345.dir/sentence.cpp.obj
+COMP345.exe: CMakeFiles/COMP345.dir/abstract_tokenizer.cpp.obj
+COMP345.exe: CMakeFiles/COMP345.dir/word_tokenizer.cpp.obj
+COMP345.exe: CMakeFiles/COMP345.dir/sentence_tokenizer.cpp.obj
+COMP345.exe: CMakeFiles/COMP345.dir/indexing.cpp.obj
+COMP345.exe: CMakeFiles/COMP345.dir/document_indexer.cpp.obj
+COMP345.exe: CMakeFiles/COMP345.dir/sentence_indexer.cpp.obj
 COMP345.exe: CMakeFiles/COMP345.dir/build.make
 COMP345.exe: CMakeFiles/COMP345.dir/linklibs.rsp
 COMP345.exe: CMakeFiles/COMP345.dir/objects1.rsp
 COMP345.exe: CMakeFiles/COMP345.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\Sai Shan\Desktop\COMP345\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable COMP345.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\Sai Shan\Desktop\COMP345\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable COMP345.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\COMP345.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -360,17 +464,21 @@ CMakeFiles/COMP345.dir/build: COMP345.exe
 
 .PHONY : CMakeFiles/COMP345.dir/build
 
-CMakeFiles/COMP345.dir/requires: CMakeFiles/COMP345.dir/google/src/document.cpp.obj.requires
-CMakeFiles/COMP345.dir/requires: CMakeFiles/COMP345.dir/google/src/google.cpp.obj.requires
-CMakeFiles/COMP345.dir/requires: CMakeFiles/COMP345.dir/google/src/indexer.cpp.obj.requires
-CMakeFiles/COMP345.dir/requires: CMakeFiles/COMP345.dir/google/src/query_result.cpp.obj.requires
-CMakeFiles/COMP345.dir/requires: CMakeFiles/COMP345.dir/google/src/stopword.cpp.obj.requires
-CMakeFiles/COMP345.dir/requires: CMakeFiles/COMP345.dir/google/src/tokenizer.cpp.obj.requires
 CMakeFiles/COMP345.dir/requires: CMakeFiles/COMP345.dir/document.cpp.obj.requires
+CMakeFiles/COMP345.dir/requires: CMakeFiles/COMP345.dir/google.cpp.obj.requires
 CMakeFiles/COMP345.dir/requires: CMakeFiles/COMP345.dir/indexer.cpp.obj.requires
 CMakeFiles/COMP345.dir/requires: CMakeFiles/COMP345.dir/query_result.cpp.obj.requires
 CMakeFiles/COMP345.dir/requires: CMakeFiles/COMP345.dir/stopword.cpp.obj.requires
 CMakeFiles/COMP345.dir/requires: CMakeFiles/COMP345.dir/Tokenizer.cpp.obj.requires
+CMakeFiles/COMP345.dir/requires: CMakeFiles/COMP345.dir/summarizer.cpp.obj.requires
+CMakeFiles/COMP345.dir/requires: CMakeFiles/COMP345.dir/index_item.cpp.obj.requires
+CMakeFiles/COMP345.dir/requires: CMakeFiles/COMP345.dir/sentence.cpp.obj.requires
+CMakeFiles/COMP345.dir/requires: CMakeFiles/COMP345.dir/abstract_tokenizer.cpp.obj.requires
+CMakeFiles/COMP345.dir/requires: CMakeFiles/COMP345.dir/word_tokenizer.cpp.obj.requires
+CMakeFiles/COMP345.dir/requires: CMakeFiles/COMP345.dir/sentence_tokenizer.cpp.obj.requires
+CMakeFiles/COMP345.dir/requires: CMakeFiles/COMP345.dir/indexing.cpp.obj.requires
+CMakeFiles/COMP345.dir/requires: CMakeFiles/COMP345.dir/document_indexer.cpp.obj.requires
+CMakeFiles/COMP345.dir/requires: CMakeFiles/COMP345.dir/sentence_indexer.cpp.obj.requires
 
 .PHONY : CMakeFiles/COMP345.dir/requires
 

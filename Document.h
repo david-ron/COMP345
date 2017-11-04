@@ -14,14 +14,15 @@
 #include <algorithm>
 #include <vector>
 #include <iomanip>
-
+#include <unordered_map>
 
 #include "tokenizer.h"
+#include "index_item.h"
 using namespace std;
 
 
 
-class Document {
+class Document : private index_item {
 friend std::ostream & operator<<(std::ostream & os,
 		Document & d);
 private:
@@ -30,8 +31,9 @@ private:
 	string fileName;
 	long findSize();
 	vector<string> filtedTokens;
+	double score;
+	unordered_map<string,int> tokenMap;
 public:
-
 	Document();
 	Document(string fileName);
 	string name();
@@ -43,8 +45,9 @@ public:
 	void duplicateRemove();
 
 	void changeContent(vector<string> words);
-
+	unordered_map<string,int> getMap();
 	void compare(Document &dict);
+	bool scorecomp(const Document &  left, const Document & right);
 
 };
 #endif /* DOCUMENT_H_ */

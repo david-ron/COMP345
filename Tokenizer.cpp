@@ -58,8 +58,8 @@ vector<string> Tokenizer::tokentoDocument(){
 vector<string> Tokenizer::removeSpace (string  s) {
 
 vector<string> tokens;
-int i = 0;
-int j = 0;
+unsigned int i = 0;
+unsigned int j = 0;
 
 while (i != s.size() && j != s.size()) {
 

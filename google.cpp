@@ -14,11 +14,9 @@
 int main()
 {
 	Document *doc1 = new Document("file1.txt");
-	vector<string> dummy;
-	dummy = doc1->content();
 	Document *doc0 = new Document("file2.txt");
 	Document *doc2 = new Document("file3.txt");
-//	indexer *idx2 = indexer();
+	doc1->content();
 	indexer *idx2 = new indexer();
 	(*idx2)>>*doc0;
 	(*idx2)>>*doc1;
@@ -40,7 +38,6 @@ int main()
 	dictionary->toCreateDictionary(*doc);
 	dictionary->sorting();
 	dictionary->duplicateRemove();
-	cout<<"stopwords printing"<<endl;
 	Document *docStop = new Document ("stop.txt");
 //	indexer idxStop = indexer();
 //	idxStop >> *docStop;
@@ -51,5 +48,9 @@ int main()
 	idx2->dftfFinder(*stopDict);
 	idx2->normalize();
 	idx2->indexDictionary(*stopDict);
-	idx2->query("help you figure");
+	vector<query_result> ranks;
+	ranks = idx2->query("help you figure",5);
+	sort(ranks.begin(),ranks.end(),query_result::scorecomp);
+	for(unsigned int i =0 ; i<ranks.size(); ++i){
+	ranks[i].info();}
 }
