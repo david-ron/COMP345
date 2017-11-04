@@ -49,7 +49,11 @@ int main()
 	idx2->normalize();
 	idx2->indexDictionary(*stopDict);
 	vector<query_result> ranks;
+<<<<<<< HEAD
 	ranks = idx2->query("help you figure tested circuit tony",5);
+=======
+	ranks = idx2->query("help you figure",5);
+>>>>>>> d2769a6c8c503a6711a7343cc5762aff49dcfa78
 	sort(ranks.begin(),ranks.end(),query_result::scorecomp);
 	for(unsigned int i =0 ; i<ranks.size(); ++i){
 	ranks[i].info();}

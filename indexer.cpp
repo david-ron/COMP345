@@ -356,6 +356,7 @@ void indexer::print(Document & dictionary) {
 	}
 }
 
+<<<<<<< HEAD
 //int main()
 //{
 //	Document *doc1 = new Document("file1.txt");
@@ -402,3 +403,5 @@ void indexer::print(Document & dictionary) {
 //
 //	idx2->print(*stopDict);
 //}
+=======
+>>>>>>> d2769a6c8c503a6711a7343cc5762aff49dcfa78
