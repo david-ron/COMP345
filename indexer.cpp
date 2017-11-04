@@ -178,12 +178,15 @@ vector<double> indexer::score()
 	for(unsigned int i =0 ;i<tf_idf_weights.size();++i)
 	{
 		for(unsigned int j =0 ;j<tf_idf_weights[0].size();++j){
-		accum = tf_idf_weights[i][j]*tf_idf_weights[i][j];
+		accum += tf_idf_weights[i][j]*tf_idf_weights[i][j];
 		}
 		if(accum==0){
 			norms.push_back(0);}
 		else{
-		norms.push_back(sqrt(accum));}
+		norms.push_back(accum);}
+	}
+	for(unsigned int i =0 ;i<tf_idf_weights.size();++i){
+		norms[i] = sqrt(norms[i]);
 	}
 
 	for(unsigned int i =0 ;i<tf_idf_weights.size();++i)
@@ -202,7 +205,9 @@ vector<double> indexer::score()
 				tmp2 = tf_idf_weights[j][i];
 				topdot += tmp1*tmp2;
 			}
+			cout<<topdot<<"   \n";
 			total_top.push_back(topdot);
+			topdot = 0;
 		}
 	double tmp3 = 0.;
 	vector<double> results;
@@ -211,6 +216,7 @@ vector<double> indexer::score()
 				tmp1 = norm;
 				tmp2 = norms[i];
 				tmp3 = total_top[i];
+				cout<<tmp3<<"  "<<tmp2<<"    \n";
 				if(tmp1==0||tmp2==0||tmp3==0){
 					results.push_back(0);}
 				else{
@@ -350,3 +356,49 @@ void indexer::print(Document & dictionary) {
 	}
 }
 
+//int main()
+//{
+//	Document *doc1 = new Document("file1.txt");
+//
+//	Document *doc0 = new Document("file2.txt");
+//	Document *doc2 = new Document("file3.txt");
+//
+//	indexer *idx2 = new indexer();
+//	(*idx2)>>*doc0;
+//	(*idx2)>>*doc1;
+//	(*idx2)>>*doc0;
+//	(*idx2)>>*doc2;
+//
+//
+//	Document *dictionary = new Document();
+//	Document *doc = new Document();
+//
+//	int i = 1;
+//	*doc = (*idx2)[i];
+//	dictionary->toCreateDictionary(*doc);
+//	i = 0;
+//	*doc = (*idx2)[i];
+//	dictionary->toCreateDictionary(*doc);
+//	i=2;
+//	*doc = (*idx2)[i];
+//	dictionary->toCreateDictionary(*doc);
+//	i=3;
+//	*doc = (*idx2)[i];
+//	dictionary->toCreateDictionary(*doc);
+//
+//	dictionary->sorting();
+//	dictionary->duplicateRemove();
+//
+//
+//	Document *docStop = new Document ("stop.txt");
+//
+//	Document *stopDict = new Document ();
+//	stopDict->compare(*dictionary);
+//	stopDict->sorting();
+//
+//	idx2->dftfFinder(*stopDict);
+//	idx2->normalize();
+//	idx2->indexDictionary(*stopDict);
+//
+//	idx2->print(*stopDict);
+//}
