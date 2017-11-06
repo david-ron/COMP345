@@ -1,16 +1,24 @@
 //
-// Created by Sai Shan on 2017-11-03.
+// Created by Dabu on 2017-11-04.
 //
 
-#ifndef COMP345_INDEX_ITEM_H
-#define COMP345_INDEX_ITEM_H
+#ifndef GOOGLER_INDEX_ITEM_H
+#define GOOGLER_INDEX_ITEM_H
 
-class index_item{
+#include <vector>
+#include <unordered_map>
 
-private:
+using namespace std;
 
+class index_item {
 public:
-
+    index_item();
+   virtual ~index_item();
+    virtual int getSize();
+    virtual void setSize(int newsize);
+private:
+    int size;
 };
 
-#endif //COMP345_INDEX_ITEM_H
+
+#endif //GOOGLER_INDEX_ITEM_H
