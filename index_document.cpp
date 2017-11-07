@@ -11,7 +11,6 @@
 index_document::index_document(): index_item(){
     score=0;
     fileName="";
-    fileSize =-1 ;
 }
 index_document::~index_document(){}
 /*!

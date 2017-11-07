@@ -14,13 +14,17 @@
 class sentence : public index_item{
 public:
 	sentence();
-	sentence(vector<string> sent,int pos);
+	sentence(string sent,int pos);
     void setSize(int newsize);
     int getPos();
+    vector<string> getTokens();
+    unordered_map<string,int> getMap();
+    string getSen();
 private:
-    vector<string> sen;
+    string sen;
     unordered_map<string,int> senWords;
     int pos;
+    vector<string> sentenceTokens;
 
 
 };

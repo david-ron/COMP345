@@ -22,7 +22,7 @@ public:
     abstract_tokenizer();
     abstract_tokenizer(string n);
     virtual ~abstract_tokenizer();
-   virtual vector<string> removeSpace(vector<string>  s) = 0;
+   virtual vector<string> removeSpace(string  s) = 0;
     string getFileName();
     void setFileName(string s);
 private:

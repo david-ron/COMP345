@@ -41,7 +41,7 @@ public:
     int mySize(); //Returns number of documents
     void normalize(); //computes the tf-idf weights based on number of documents
 //    to be implemented
-    vector<query_result> query(string, int mode = 10);
+    vector<query_result> query(string, int x);
     void dftfFinder(index_document & dictionary);
     // not sure where to place this
     void dictionaryCreation();

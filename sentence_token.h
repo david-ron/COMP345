@@ -17,8 +17,9 @@ class sentence_token: public abstract_tokenizer{
 public:
 	sentence_token();
 	sentence_token(string n);
-	vector<string> removeSpace(vector<string>  s);
+	vector<string> removeSpace(string  s);
 	vector<string> sentencetoken();
+	vector<int> getPos();
 private:
 	vector<int> pos;
 
