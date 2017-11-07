@@ -1,22 +1,3 @@
-Talal!	Talal,		hhhh
-Anna	Josh		Montreal
-Victor	Samuel		Blainville	
-Mike	Peter		talal	
-Phill	Mateo		Anjou	
-Ted		Evan		Montreal
-Maya	Aaron		Brossard
-Lucy	Carson		Anjou.
- "jacob loves tango"
-a john
-about
-above
-after
-again
-against
-all
-am
-an
-and
-any
-are
-i can't wait
+or to help you figure out who you are or
+Used a breadboard as a base wire and design circuit using various
+

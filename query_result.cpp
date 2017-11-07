@@ -25,7 +25,7 @@ query_result::query_result(){
  * @param docc
  * @param scoree
  */
-query_result::query_result(Document & docc,double scoree)
+query_result::query_result(index_document & docc,double scoree)
 {
 	score = scoree;
 	doc = docc;
@@ -38,4 +38,4 @@ double query_result::scoree(){
 	return score;
 }
 
-
+query_result::~query_result(){}
