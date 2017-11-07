@@ -33,7 +33,10 @@ vector<double> sentence_indexer::score(){
 }
 
 void sentence_indexer::print(){
-std::cout<<sentenceObj[0].getTokens()[0];
+	for(unsigned int j = 0; j<sentenceObj.size();++j){
+for(unsigned int i = 0; i<sentenceObj[j].getTokens().size();++i){
+cout<<sentenceObj[j].getTokens()[i]<< "  ";}
+	cout<<"\n";}
 }
 vector<query_result> sentence_indexer::query(string str, int x){
  vector<query_result> tmp;
